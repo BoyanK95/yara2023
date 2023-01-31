@@ -17,7 +17,7 @@ header .header{
 }
 .header .title {
     margin: 0 20px;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -26,7 +26,7 @@ header .header{
 }
 .menu-container select, .settings-container select {
     border: none;
-    font-size: 18px;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 .menu-container select {
