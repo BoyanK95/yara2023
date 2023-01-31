@@ -1,0 +1,47 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 99px;
+  height: calc(100% - 100px);
+  box-sizing: border-box;
+  border-right: 0.5px solid rgb(182, 182, 182);
+  padding: 9px 0;
+}
+nav .icons {
+  height: 80px;
+  align-items: center;
+}
+
+/* .icons .text {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+} */
+nav .global-setings {
+  bottom: 0;
+} 
+
+
+/* nav {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 244, 244);
+    width: 150px;
+    height: 100%;
+    color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  nav a {
+    display: block;
+    padding: 1rem;
+    color: black;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #444;
+  }
+  */
