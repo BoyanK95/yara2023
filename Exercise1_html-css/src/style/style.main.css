@@ -25,10 +25,6 @@ form {
     margin: 1rem;
 }
 
-#calendar-name-container {
-    width: 740px;
-}
-
 #first-row-inputs {
     display: flex;
     flex-direction: row;
@@ -41,6 +37,15 @@ form {
 
 #region-input {
     width: 350px;
+}
+
+#calendar-name-container {
+    width: 740px;
+}
+
+#max-char {
+    color: rgb(68, 68, 68);
+    font-size: 14px;
 }
  .input {
     border: 1px solid rgb(172, 171, 171);
@@ -68,4 +73,9 @@ form {
     color: #fff;
     font-size: 1.2rem;
     margin-top: 6rem;
+ }
+
+ .form-button button:hover {
+    background-color: rgb(38, 38, 144);
+    box-shadow: 2px 2px 2px 3px rgba(0,0,0, .3);
  }
