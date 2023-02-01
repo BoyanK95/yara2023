@@ -1,0 +1,15 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+.container {
+    height: 100%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+}
