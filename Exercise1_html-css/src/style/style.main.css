@@ -1,18 +1,42 @@
 main {
     position: absolute;
-    right: 5rem;
+    right: 430px;
     top: 10rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 60%;
 } 
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .form-input {
     display: flex;
     flex-direction: column;
     margin: 2rem;
 }
 
-#crop {
-    width: 15rem;
+#first-row-inputs {
+    display: flex;
+    flex-direction: row;
 }
+
+#crop {
+    width: 24rem;
+}
+
+#region-input {
+    width: 24rem;
+}
+ .input {
+    border: 1px solid rgb(172, 171, 171);
+    height: 25px;
+ }
+
+ form label {
+    font-weight: bold;
+ }

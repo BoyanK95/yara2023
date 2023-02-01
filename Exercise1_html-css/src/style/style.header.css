@@ -9,7 +9,7 @@ header{
     width: 100px;
     height: 100px;
 }
-header .header{
+.header{
     width: calc( 100% - 100px );
     display: flex;
     align-items: center;

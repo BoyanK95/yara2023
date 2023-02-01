@@ -26,8 +26,8 @@
                     </div>
                     <div class="settings-container">
                         <select name="en-lang" id="">
-                            <option selected>en</option>
                             <option selected>bg</option>
+                            <option selected>en</option>
                         </select>
                         <select name="profile" id="">
                             <option selected>Profile</option>
@@ -38,7 +38,7 @@
 
             <!------------------ Left Navbar --------------------->
             <nav class="nav-bar">
-                <div class="icons">
+                <div>
                     <div class="nav-item">
                         <div class="icons">
                         <img src="./assets/crop-icon.png" alt="crop-icon">
@@ -85,25 +85,29 @@
             </nav>
             <!----------------------- Main -------------------------------->
             <main>
-                <h1>Create a Crop Calendar: Specify crop and varieties</h1>
                 <form action="">
-                    <div class="form-input">
-                        <label for="">Region</label>
-                        <input type="text"  name="region"  defaultValue="All"/>
+                    <h1>Create a Crop Calendar: Specify crop and varieties</h1>
+                    <div id="first-row-inputs">
+                        <div class="form-input">
+                            <label for="region">Region</label>
+                            <input class="input" type="text"  name="region" id="region-input" defaultValue="All"/>
+                        </div>
+                        <div class="form-input">
+                            <label for="crop">Crop</label>
+                            <select class="input" name="crop" id="crop"></select>
+                        </div>
                     </div>
                     <div class="form-input">
-                        <label for="">Crop</label>
-                        <select name="crop" id="crop"></select>
+                        <label for="calendar-name">Calendar name</label>
+                        <input class="input" type="text" name="calendar-name"/>
                     </div>
                     <div class="form-input">
-                        <label for="">Calendar name</label>
-                        <input type="text" />
+                        <label for="variety">Please specify the crop variety:</label>
+                        <input class="input" type="text" name="variety"/>
                     </div>
-                    <div class="form-input">
-                        <label for="">Please specify the crop variety:</label>
-                        <input type="text" />
+                    <div class="form-button">
+                        <button type="button">Next: Add growth stages</button>
                     </div>
-                    <button type="button">Next: Add growth stages</button>
                 </form>
             </main>
         </div>
