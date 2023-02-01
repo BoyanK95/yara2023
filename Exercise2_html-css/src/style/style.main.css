@@ -23,6 +23,11 @@ main {
    color: rgb(74, 115, 196);
 }
 
+.fa-bell {
+   color: rgb(40, 149, 40);
+   margin-right: 0.5rem;
+}
+
 #notification-count {
     color: red;
 }
