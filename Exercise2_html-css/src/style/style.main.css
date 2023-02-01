@@ -14,6 +14,15 @@ main {
     padding: 1.7rem;
 }
 
+.main-top-right-container {
+   display: flex;
+    align-items: center;
+}
+
+#notification-p {
+   color: rgb(74, 115, 196);
+}
+
 #notification-count {
     color: red;
 }
@@ -24,8 +33,9 @@ main {
 }
 
 #create-btn {
-    background-color: rgb(74, 76, 196);
-    padding: 0.7rem 1.3rem;
+    background-color: rgb(55, 93, 170);
+    padding: 0.5rem 0.8rem;
+    margin-left: 1.5rem;
     border-radius: 4px;
     border: none;
     color: #fff;
@@ -33,6 +43,6 @@ main {
 
 #create-btn:hover {
     background-color: rgb(14, 14, 97);
-    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.3);
     color: rgb(182, 218, 231);
 }
