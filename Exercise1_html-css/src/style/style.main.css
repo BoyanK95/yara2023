@@ -47,6 +47,10 @@ form {
     height: 25px;
  }
 
+ .bottom-form-container {
+    width: 1100px;
+ }
+
  form label {
     font-weight: bold;
  }
@@ -57,7 +61,7 @@ form {
  }
 
  .form-button button {
-    background-color: rgb(77, 136, 155);
+    background-color: rgba(121,168,215,255);
     padding: 0.7rem 1.3rem;
     border-radius: 4px;
     border: none;
