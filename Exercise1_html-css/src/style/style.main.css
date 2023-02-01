@@ -40,3 +40,17 @@ form {
  form label {
     font-weight: bold;
  }
+
+ .form-button {
+    display: flex;
+    justify-content: right;
+ }
+
+ .form-button button {
+    background-color: rgb(77, 136, 155);
+    padding: 0.7rem 1.3rem;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+ }
