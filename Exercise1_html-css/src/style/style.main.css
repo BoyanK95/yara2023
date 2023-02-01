@@ -1,11 +1,16 @@
 main {
     position: absolute;
-    right: 430px;
+    right: 1rem;
     top: 10rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 60%;
+    width: calc(100% - 150px);
+    /* display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: calc(100% - 100px);
+    background-color: gray; */
 } 
 
 form {
@@ -17,7 +22,11 @@ form {
 .form-input {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 1rem;
+}
+
+#calendar-name-container {
+    width: 740px;
 }
 
 #first-row-inputs {
@@ -26,11 +35,12 @@ form {
 }
 
 #crop {
-    width: 24rem;
+    width: 350px;
+    height: 29px;
 }
 
 #region-input {
-    width: 24rem;
+    width: 350px;
 }
  .input {
     border: 1px solid rgb(172, 171, 171);
@@ -53,4 +63,5 @@ form {
     border: none;
     color: #fff;
     font-size: 1.2rem;
+    margin-top: 6rem;
  }
