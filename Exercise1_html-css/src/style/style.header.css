@@ -3,6 +3,7 @@ header{
     width: 100%;
     display: flex;
     border-bottom: 0.5px solid gray;
+    background-color: #ffff;
 }
 
 .logo img {
