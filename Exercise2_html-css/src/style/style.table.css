@@ -34,4 +34,19 @@ td, th {
     color: #769fd1;
 }
 
+.new {
+    color: #f3ad6e;
+    margin-left: 0.3rem;
+}
+ .status {
+    border-radius: 100%;
+    background-color: green;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.3rem;
+ }
+
+ #status-td {
+    display: flex;
+ }
 
