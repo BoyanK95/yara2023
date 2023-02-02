@@ -7,6 +7,10 @@ table {
     padding: 0.5rem 1rem;
 }
 
+#last-mod {
+    width: 10px;
+}
+
 thead {
     background-color: #346eb6;
     color: #fff;
@@ -14,10 +18,7 @@ thead {
 
 tbody {
     background-color: #d1e3f7;
- }
-
- tbody {
-    color: #769fd1;
+    color: #346eb6;
  }
  
 td, th {
@@ -31,7 +32,7 @@ td, th {
 }
 
 .last-td-row a {
-    color: #769fd1;
+    color: #346eb6;
 }
 
 .new {
