@@ -3,17 +3,27 @@ h3 {
 }
 
 table {
-    width: 90%;
+    width: 100%;
+    padding: 0.5rem 1rem;
 }
 
 thead {
-    background-color: rgb(55, 93, 170);
+    background-color: #346eb6;
     color: #fff;
 }
 
+tbody {
+    background-color: #d1e3f7;
+ }
+ 
 td, th {
     text-align: left;
     padding: 1rem;
+    text-align: left;
+}
+
+.last-td-row {
+    background-color: #ffffff;
 }
 
 
