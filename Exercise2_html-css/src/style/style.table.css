@@ -7,8 +7,14 @@ table {
     padding: 0.5rem 1rem;
 }
 
-#last-mod {
-    width: 10px;
+.last-mod {
+    width: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+#varieties {
+    width: 30rem;
 }
 
 thead {
@@ -52,4 +58,10 @@ td, th {
 
 #actions-td {
     color:  #346eb6;
+    text-align: center;
+    width: 1rem;
+}
+
+.no-filter {
+    color: gray;
 }
