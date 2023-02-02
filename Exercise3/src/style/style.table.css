@@ -1,0 +1,55 @@
+h3 {
+    padding: 1rem;
+}
+
+table {
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.last-mod {
+    width: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+#varieties {
+    width: 30rem;
+}
+
+thead {
+    background-color: #346eb6;
+    color: #fff;
+}
+
+tbody {
+    background-color: #d1e3f7;
+    color: #346eb6;
+ }
+
+td, th {
+    text-align: left;
+    padding: 1rem;
+}
+
+.last-td-row {
+    background-color: #ffffff;
+}
+
+.last-td-row a {
+    color: #346eb6;
+}
+
+ #status-td {
+    display: flex;
+ }
+
+#actions-td {
+    color:  #346eb6;
+    text-align: center;
+    width: 1rem;
+}
+
+.no-filter {
+    color: gray;
+}
