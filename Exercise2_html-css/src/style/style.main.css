@@ -30,12 +30,13 @@ main {
 
 #notification-count {
     color: red;
+    font-weight: bold;
 }
 
-.form-button {
+/* .form-button {
     display: flex;
     justify-content: right;
-}
+} */
 
 #create-btn {
     background-color: rgb(55, 93, 170);

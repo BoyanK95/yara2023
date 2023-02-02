@@ -1,0 +1,19 @@
+h3 {
+    padding: 1rem;
+}
+
+table {
+    width: 90%;
+}
+
+thead {
+    background-color: rgb(55, 93, 170);
+    color: #fff;
+}
+
+td, th {
+    text-align: left;
+    padding: 1rem;
+}
+
+
