@@ -15,7 +15,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* margin-top: 2rem; */
 }
 .header .title {
     margin: 0 20px;
@@ -29,7 +28,7 @@ header{
 .menu-container select, .settings-container select {
     border: none;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 .menu-container select {
     margin-right: 20px;

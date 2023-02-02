@@ -6,11 +6,6 @@ main {
     justify-content: center;
     flex-direction: column;
     width: calc(100% - 150px);
-    /* display: flex;
-    justify-content: center;
-    flex-direction: row;
-    height: calc(100% - 100px);
-    background-color: gray; */
 } 
 
 form {

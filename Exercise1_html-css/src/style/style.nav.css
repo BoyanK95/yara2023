@@ -29,6 +29,7 @@ nav a {
     font-size: 14px;
     font-weight: 600;
     text-align: center;
+    color: black;
 }
 
 .global-setings {
@@ -39,6 +40,9 @@ nav a {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+.global-setings a {
+    color: black;
 }
 
 .icons img {
