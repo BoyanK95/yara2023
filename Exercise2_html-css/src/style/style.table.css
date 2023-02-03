@@ -54,6 +54,7 @@ td, th {
 
  #status-td {
     display: flex;
+    height: 60px;
  }
 
 #actions-td {
