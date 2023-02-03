@@ -8,7 +8,6 @@ table {
 }
 
 .last-mod {
-    width: 1rem;
     align-items: center;
     text-align: center;
 }
@@ -32,6 +31,11 @@ td, th {
     padding: 1rem;
 }
 
+td a {
+    text-decoration: none;
+    color:  #346eb6;
+}
+
 .last-td-row {
     background-color: #ffffff;
 }
@@ -40,14 +44,9 @@ td, th {
     color: #346eb6;
 }
 
- #status-td {
-    display: flex;
- }
-
 #actions-td {
-    color:  #346eb6;
+    
     text-align: center;
-    width: 1rem;
 }
 
 .no-filter {
