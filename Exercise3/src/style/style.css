@@ -9,7 +9,7 @@ body {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    background-color: lightgray;
+    background-color: rgb(228, 239, 239);
 }
 
 .container {

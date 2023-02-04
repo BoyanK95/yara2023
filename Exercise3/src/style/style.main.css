@@ -73,3 +73,9 @@ main {
     padding: 5px;
     background-color: rgb(232, 251, 232);
 }
+
+summary {
+    padding: 1rem;
+    background-color: rgb(243, 245, 246);
+    margin-bottom: 1rem;
+}
