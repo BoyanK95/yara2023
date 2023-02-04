@@ -87,20 +87,46 @@
             <!----------------------- Main ------------------------>
             <main>
                 <div class="main-top-container">
-                    <div class="main-top-left-container">
+                    <div class="crop-details">
                         <h1>Almonds Generic</h1>
                         <h4>Crop details</h4>
                         <p>Last modified by maya.krasteva@yara.com at 29/01/2023 08:00:37</p>
                     </div>
+                    <div class="solutions-suported">
+                        <h4>Solutions supported</h4>
+                        <button>CNP</button>
+                    </div>
+                    <!------------- Selection Form --------------->
                     <form action="">
-
+                        <div class="selection-input-container">
+                            <div class="yeild-unit-container">
+                                <label for="">Yeild unit</label>
+                                <select name="yeild-unit" id="yeild-unit">
+                                    <option value="t/ha">t/ha</option>
+                                </select>
+                            </div>
+                            <div class="recommendation-unit-container">
+                                <label for="">Recommendation unit</label>
+                                <select name="reecommendation-unit" id="reecommendation-unit">
+                                    <option value="kg-ha">Kg/ha</option>
+                                </select>
+                            </div>
+                            <div class="growth-stage">
+                                <label for="">Growth scale</label>
+                                <select name="growth-stage" id="growth-stage">
+                                    <option value="t/ha">BBCH-Stone fruit</option>
+                                </select>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
                 <!-------------------- Table ------------------->
                 <div class="table">
                     <div class="tab-container">
-                        <button>Add Pre- and Post-crops</button>
+                        <details>
+                            <summary>Add Pre- and Post-crops</summary>
+                        </details>
                     </div>
 
                     <table>
@@ -127,13 +153,7 @@
                                 <td class="last-td-row">Almonds Generic</td>
                                 <td class="last-td-row">Yes</td>
                                 <td class="last-td-row">No</td>
-                                <td class="last-td-row">18 days</td>
-                                <td class="last-td-row">2 jan - 20 jan</td>
-                                <td id="status-td" class="last-td-row">
-                                    <div class="status"></div>
-                                    Approved <span class="new">*NEW</span>
-                                </td>
-                                <td class="last-td-row last-mod">
+                                <td class="last-td-row">
                                     <img src="./assets/questionmark.png" alt="questionmark" />
                                 </td>
                                 <td class="last-td-row" id="actions-td">...</td>
