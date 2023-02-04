@@ -9,8 +9,6 @@ main {
 }
 
 .main-top-container {
-    display: flex;
-    justify-content: space-between;
     padding: 1.7rem;
 }
 
@@ -67,4 +65,11 @@ main {
 
 .tab-container {
    border-bottom: 0.5px solid rgb(193, 193, 193);
+}
+
+#cnp-btn {
+    color: darkgreen;
+    border: none;
+    padding: 5px;
+    background-color: rgb(232, 251, 232);
 }
