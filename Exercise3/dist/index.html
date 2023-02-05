@@ -87,33 +87,48 @@
             <!----------------------- Main ------------------------>
             <main>
                 <div class="main-top-container">
-                    <div class="main-top-left-container">
+                    <div class="crop-details">
                         <h1>Almonds Generic</h1>
                         <h4>Crop details</h4>
                         <p>Last modified by maya.krasteva@yara.com at 29/01/2023 08:00:37</p>
                     </div>
+                    <div class="solutions-suported">
+                        <h4>Solutions supported</h4>
+                        <button id="cnp-btn">CNP</button>
+                    </div>
+                    <!------------- Selection Form --------------->
                     <form action="">
-                        <label for="">Yeild unit</label>
-                        <select name="yeild-unit" id="yeild-unit">
-                            <option value="t/ha">t/ha</option>
-                        </select>
-                        <label for="">Recommendation unit</label>
-                        <select name="reecommendation-unit" id="reecommendation-unit">
-                            <option value="kg-ha">Kg/ha</option>
-                        </select>
-                        <label for="">Growth scale</label>
-                        <select name="growth-stage" id="growth-stage">
-                            <option value="t/ha">BBCH-Stone fruit</option>
-                        </select>
+                        <div class="selection-input-container">
+                            <div class="yeild-unit-container">
+                                <label for="">Yeild unit</label>
+                                <select name="yeild-unit" id="yeild-unit">
+                                    <option value="t/ha">t/ha</option>
+                                </select>
+                            </div>
+                            <div class="recommendation-unit-container">
+                                <label for="">Recommendation unit</label>
+                                <select name="reecommendation-unit" id="reecommendation-unit">
+                                    <option value="kg-ha">Kg/ha</option>
+                                </select>
+                            </div>
+                            <div class="growth-stage">
+                                <label for="">Growth scale</label>
+                                <select name="growth-stage" id="growth-stage">
+                                    <option value="t/ha">BBCH-Stone fruit</option>
+                                </select>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
                 <!-------------------- Table ------------------->
-                <div class="table">
+                <div class="table-container">
                     <div class="tab-container">
-                        <button>Add Pre- and Post-crops</button>
-                    </div>
-
+                        <details>
+                            <summary id="summary">Add Pre-and Post-crops</summary>
+                            <div class="add-btn">
+                                <button>Add Pre- and Post-crops</button>
+                            </div>
                     <table>
                         <thead>
                             <tr>
@@ -145,6 +160,9 @@
                             </tr>
                         </tfoot>
                     </table>
+                        </details>
+                    </div>
+                    
                 </div>
             </main>
         </div>
