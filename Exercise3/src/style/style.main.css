@@ -16,6 +16,19 @@ main {
     margin-bottom: 3.5rem;
 }
 
+.crop-details h1 {
+    margin-bottom: 0.7rem;
+}
+
+.crop-details h4 {
+    margin-bottom: 0.7rem;
+}
+
+.crop-details p {
+    color: gray;
+    font-size: 0.8rem;
+}
+
 .solutions-supported {
     margin-bottom: 1rem;
 }
@@ -60,8 +73,13 @@ main {
     border: 1px solid lightblue;
 }
 
+.selection-input-container {
+    display: flex;
+}
 
-
+.yeild-unit-container {
+    margin-right: 2.5rem;
+}
 
 /* .main-top-right-container {
    display: flex;
