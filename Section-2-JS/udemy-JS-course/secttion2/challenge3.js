@@ -18,4 +18,6 @@ if (dolphinsAvrgScore > koalasAvrgScore) {
     console.log(`Koalas win, with a higher score of ${koalasAvrgScore}`);
 }
 
+// Emoji for mac (CMD + CTRL + space)
+console.log('Testing emojish 👹'); 
 
