@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/udemy-JS-course/secttion2/challenge3.js"
+            "program": "${file}"
         }
     ]
 }
