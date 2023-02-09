@@ -35,10 +35,24 @@ const operation = {
 
 function evalIsEvil(input) {
     if (input.includes('+')) {
-        const firNum = input.split('+')[0]
+        const firstNum = input.split('+')[0]
         const secondNum = input.split('+')[1]
-        console.log(firNum);
-        console.log(secondNum);
+        return result = Number(firstNum) + Number(secondNum)
+    }
+    if (input.includes('-')) {
+        const firstNum = input.split('-')[0]
+        const secondNum = input.split('-')[1]
+        return result = Number(firstNum) - Number(secondNum)
+    }
+    if (input.includes('*')) {
+        const firstNum = input.split('*')[0]
+        const secondNum = input.split('*')[1]
+        return result = Number(firstNum) * Number(secondNum)
+    }
+    if (input.includes('/')) {
+        const firstNum = input.split('/')[0]
+        const secondNum = input.split('/')[1]
+        return result = Number(firstNum) / Number(secondNum)
     }
 }
 
