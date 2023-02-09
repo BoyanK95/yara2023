@@ -1,9 +1,6 @@
-// const display = document.getElementById('display');
 const value = document.getElementById('value');
 const buttons = document.querySelectorAll('button');
-// const layoutBtn = document.getElementById('toggleBtn');
 const body = document.querySelector('body');
-
 
 buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -15,49 +12,38 @@ buttons.forEach((btn) => {
             value.innerHTML = evalIsEvil(value.innerHTML);
         } else if (btn.innerText === 'C') {
             const newValue = Array.from(value.innerHTML).slice(0, value.innerHTML.length - 1);
-            value.innerHTML = newValue.join('')
+            value.innerHTML = newValue.join('');
+        } else if (btn.innerHTML === 'CA') {
+            value.innerHTML = '';
         } else {
-            if (btn.innerHTML === 'CA') {
-                value.innerHTML = '';
-            } else {
-                value.innerHTML += btn.innerHTML;
-            }
+            value.innerHTML += btn.innerHTML;
         }
     });
 });
 
-const operation = {
-    plus: '+',
-    minus: '-',
-    divide: '/',
-    multiply: '*'
-}
-
 function evalIsEvil(input) {
     if (input.includes('+')) {
-        const firstNum = input.split('+')[0]
-        const secondNum = input.split('+')[1]
-        result = Number(firstNum) + Number(secondNum)
-        return isNaN(result) ?  'ERR' : result
+        const firstNum = input.split('+')[0];
+        const secondNum = input.split('+')[1];
+        result = Number(firstNum) + Number(secondNum);
+        return isNaN(result) ? 'ERR' : result;
     }
     if (input.includes('-')) {
-        const firstNum = input.split('-')[0]
-        const secondNum = input.split('-')[1]
-        result = Number(firstNum) - Number(secondNum)
-        return isNaN(result) ?  'ERR' : result
+        const firstNum = input.split('-')[0];
+        const secondNum = input.split('-')[1];
+        result = Number(firstNum) - Number(secondNum);
+        return isNaN(result) ? 'ERR' : result;
     }
     if (input.includes('*')) {
-        const firstNum = input.split('*')[0]
-        const secondNum = input.split('*')[1]
-        result = Number(firstNum) * Number(secondNum)
-        return isNaN(result) ?  'ERR' : result
+        const firstNum = input.split('*')[0];
+        const secondNum = input.split('*')[1];
+        result = Number(firstNum) * Number(secondNum);
+        return isNaN(result) ? 'ERR' : result;
     }
     if (input.includes('/')) {
-        const firstNum = input.split('/')[0]
-        const secondNum = input.split('/')[1]
-        result = Number(firstNum) / Number(secondNum)
-        return isNaN(result) ?  'ERR' : result
+        const firstNum = input.split('/')[0];
+        const secondNum = input.split('/')[1];
+        result = Number(firstNum) / Number(secondNum);
+        return isNaN(result) ? 'ERR' : result;
     }
 }
-
-
