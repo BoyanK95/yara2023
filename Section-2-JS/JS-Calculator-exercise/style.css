@@ -1,0 +1,180 @@
+/*########## Main #######*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #edf1f4;
+}
+
+.dark {
+    background: #282c2f;
+}
+
+.calculator {
+    position: relative;
+    width: 340px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fffb;
+}
+
+.dark .calculator {
+    background: #33393e;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25), -15px -15px 20px rgba(255, 255, 225, 0.1);
+}
+
+/*######### Buttons ##########*/
+.calculator .buttons {
+    position: relative;
+    display: grid;
+}
+
+/*######## Value Screen ########*/
+#value {
+    position: relative;
+    grid-column: span 4;
+    user-select: none;
+    overflow: none;
+    width: 100%;
+    text-align: end;
+    color: #5166d6;
+    height: 100px;
+    line-height: 100px;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 20px #fff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 0 20px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.dark #value {
+    color: #eee;
+    box-shadow: inset 15px 15px 20px rgba(0, 0, 0, 0.5), inset -15px -15px 20px rgba(255, 255, 225, 0.1);
+}
+
+.calculator .buttons button {
+    position: relative;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 20px #fff;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #666;
+    border: 2px solid #edf1f4;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+    border-radius: 10px;
+}
+
+.dark .calculator .buttons button {
+    color: rgb(149, 28, 28);
+    background-color: rgb(128, 128, 128);
+    border: 2px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), -5px -5px 10px rgba(255, 255, 225, 0.1);
+}
+
+.calculator .buttons button:active {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+    color: #f44366;
+}
+
+.dark .calculator .buttons button:active {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), inset -5px -5px 10px rgba(255, 255, 225, 0.1);
+}
+
+#clear {
+    grid-column: span 1;
+    background-color: #ee3f48;
+    color: #fff;
+    border: 2px solid #f3f5f7;
+}
+
+#clear:hover {
+    background: rgb(208, 52, 52);
+}
+
+#clearAll {
+    background-color: rgb(160, 3, 3);
+    border: 2px solid #edf1f4;
+    color: #fff;
+}
+
+#clearAll:hover {
+    background-color: rgb(92, 8, 8);;
+}
+
+#plus {
+    grid-row: span 2;
+    background-color: #31a935;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+
+#plus:hover {
+    background: rgb(5, 132, 5);
+}
+
+#equal {
+    grid-row: span 2;
+    background-color: #2196f3;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+
+#equal:hover {
+    background-color: rgb(87, 87, 191);
+}
+
+.dark #clear,
+.dark #clearAll,
+.dark #plus,
+.dark #equal {
+    border: 2px solid #333;
+}
+
+#plus:active,
+#clear:active,
+#clearAll:active,
+#equal:active {
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2), -3px -3px 7px #fff, inset 3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.dark #clear:active,
+.dark #clearAll:active,
+.dark #plus:active,
+.dark #equal:active {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*########## Toggle Button ###########*/
+#toggleBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+    border: 2px solid #edf1f4;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+}
+
+.dark #toggleBtn {
+    background: #edf1f4;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), -5px -5px 10px rgba(255, 255, 225, 0.1);
+}
