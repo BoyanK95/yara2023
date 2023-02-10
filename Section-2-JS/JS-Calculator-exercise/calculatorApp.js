@@ -13,7 +13,7 @@ buttons.forEach((btn) => {
         } else if (btn.innerText === 'C') {
             const newValue = Array.from(value.innerHTML).slice(0, value.innerHTML.length - 1);
             value.innerHTML = newValue.join('');
-        } else if (btn.innerHTML === 'CA') {
+        } else if (btn.innerText === 'CA') {
             value.innerHTML = '';
         } else if (value.innerHTML.length < 8){
             value.innerHTML += btn.innerHTML;
@@ -74,7 +74,7 @@ function evalIsEvil(input) {
     }
 }
 
-//In a real project I would use JavaScript Expression Evaluator package
+//In a real project, would use JavaScript Expression Evaluator package
 // Installation: npm install expr-eval
 
 // Basic Usage:
