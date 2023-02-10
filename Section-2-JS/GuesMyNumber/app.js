@@ -7,17 +7,14 @@ const checkBtn = document.getElementsByClassName('check')[0];
 const againBtn = document.getElementsByClassName('again')[0];
 const message = document.querySelector('.message');
 const buttons = document.querySelectorAll('button');
-const highScore = document.getElementsByClassName('highscore')[0];
+const highScoreP = document.getElementsByClassName('highscore')[0];
+
 let scoreText = document.querySelector('.score');
 
 let randomNumber = Number(Math.ceil(Math.random() * 20));
-console.log(randomNumber);
 
 function addEffect() {
     let score = Number(scoreText.textContent);
-    console.log(Number(guess.value));
-    console.log(score);
-
     if (guess.value == '') {
         message.textContent = '⛔️ No Number!';
         score -= 1;
@@ -31,7 +28,8 @@ buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
         if (btn.className === 'btn check') {
             addEffect();
-        } else if (btn.className == '') {
+        } else if (btn.className == 'btn again') {
+            reset()
         }
     });
 });
@@ -40,7 +38,10 @@ function compareNumbers(guessNum, originalNum, score) {
     if (guessNum == originalNum) {
         body.style.backgroundColor = '#60b347';
         message.textContent = `🎉 Congratulation you WIN !`;
-        highScoreSetter(score);
+        let highScore = Number(highScoreP.textContent)
+        if (score > highScore) {
+            highScoreP.textContent = score
+        }      
         return;
     } else if (guessNum > originalNum) {
         score -= 1;
@@ -55,13 +56,9 @@ function compareNumbers(guessNum, originalNum, score) {
     }
 }
 
-function highScoreSetter(currentScore) {
-    let bestScore = localStorage.getItem('bestScore');
-    
-    if (!bestScore) {
-        bestScore = Number(highScore.textContent);
-    }
-    currentScore > bestScore
-        ? localStorage.setItem('bestScore', currentScore)
-        : localStorage.setItem('bestScore', bestScore);
+
+function reset() {
+    body.style.backgroundColor = '#222'
+    scoreText.textContent = '20'
+    randomNumber = Number(Math.ceil(Math.random() * 20));
 }
