@@ -38,6 +38,7 @@ function compareNumbers(guessNum, originalNum, score) {
     if (guessNum == originalNum) {
         body.style.backgroundColor = '#60b347';
         message.textContent = `🎉 Congratulation you WIN !`;
+        number.textContent = randomNumber
         let highScore = Number(highScoreP.textContent)
         if (score > highScore) {
             highScoreP.textContent = score
@@ -60,5 +61,6 @@ function compareNumbers(guessNum, originalNum, score) {
 function reset() {
     body.style.backgroundColor = '#222'
     scoreText.textContent = '20'
+    number.textContent = '?'
     randomNumber = Number(Math.ceil(Math.random() * 20));
 }
