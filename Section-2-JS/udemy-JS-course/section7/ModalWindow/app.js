@@ -21,3 +21,11 @@ function showModal() {
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
 }
+
+document.addEventListener('keydown', function (e) {
+    console.log(e);
+    if (e.key === 'Escape') {
+        console.log('esc press');
+        closeModal()
+    }
+}) 
