@@ -28,12 +28,19 @@ class Cat {
         this.birthYear = birthYear
     }
 
+    /** Instance methods */
     calcAge() {
         console.log(2023 - this.birthYear);
     }
 
     get age() {
         return 2023 - this.birthYear
+    }
+
+    /** Static method */
+    static pur(){
+        console.log('Cat purred!😽');
+        console.log(this);
     }
 }
 
@@ -53,6 +60,8 @@ kitrie.greet()
 const pug = new Dog('Aria', 1999, 'pug')
 pug.bark()
 
+
+//Getters and Setters
 const account = {
     owner: 'Jamie',
     movements: [200, 530, 120, 300],
@@ -70,3 +79,14 @@ console.log(account.latest);
 
 account.latest = 50
 console.log(account.movements); 
+
+//Static Methods
+console.log('Static Methods!');
+/**Creating static method on the Dog class */
+Dog.walk = function name() {
+    console.log('Dog walked a little bit 🐕');
+    console.log(this);
+}
+
+Dog.walk()
+Cat.pur()
