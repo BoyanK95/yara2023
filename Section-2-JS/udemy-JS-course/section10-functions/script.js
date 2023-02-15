@@ -40,3 +40,9 @@ const checkIn = function (flightNum, passanger) {
 
 checkIn(flight, boyan)
 
+
+const high5 = function () {
+    console.log('👋');
+}
+
+document.body.addEventListener('click', high5)
