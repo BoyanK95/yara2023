@@ -21,3 +21,22 @@ createBookings('LG123', 2, 800)
 createBookings('LG122', 2)
 createBookings('LG125', 3)
 createBookings('LG1000',undefined, 1000)
+
+////Passing Arguments Value vs Refrance ////
+const flight = 'LH234'
+const boyan = {
+    name: 'Boyan Koychev',
+    passport: '23412321777'
+}
+
+const checkIn = function (flightNum, passanger) {
+    passanger.name = 'Mr ' + passanger.name
+    if (passanger.passport === '23412321777') {
+        alert('Checked in!')
+    } else {
+        alert('Wrong passport!')
+    }
+}
+
+checkIn(flight, boyan)
+
