@@ -4,7 +4,7 @@ const hostname = 'localhost'
 const port = 3000
 
 const server = http.createServer((req, res) => {
-    res.end('Welcome, Denis Kanh to node!')
+    res.end('Welcome to node!')
 })
 
 server.listen(port, hostname, () => {
