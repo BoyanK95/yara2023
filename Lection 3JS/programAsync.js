@@ -1,5 +1,5 @@
 function loadUsers(userIds, load, done) {
-    var users = []
+    const users = []
     const promises = userIds.map((id) => {
       return new Promise((resolve, reject) => {
         load(id, (user) => {
