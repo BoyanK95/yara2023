@@ -1,26 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Shop</a></li>
-                <li><a href="/add-product">Add Product</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add Product</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
 
-    <main>
-        <form action="/add-product" method="POST">
-            <input type="text" name="title">
-            <button type="submit">Add Product</button>
-        </form>
-    </main>
-</body>
+            main {
+                padding: 1rem;
+            }
+
+            .main-header {
+                width: 100%;
+                height: 3.5rem;
+                background-color: rgb(227, 200, 23);
+                padding: 0 1.5rem;
+            }
+
+            .main-header__nav {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .main-header__item-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            .main-header__item {
+                margin: 0 1rem;
+                padding: 0;
+            }
+
+            .main-header__item a {
+                text-decoration: none;
+                color: white;
+                font-weight: 600;
+            }
+
+            .main-header__item a:hover,
+            .main-header__item a:active,
+            .main-header__item a.active {
+                color: rgb(226, 111, 11);
+            }
+
+            .main-header__item a:hover {
+                font-size: 1.45rem;
+            }
+
+            .product-form {
+                width: 20rem;
+                max-width: 90%;
+                margin: auto;
+            }
+
+            .form-control {
+                margin: 1rem 0;
+            }
+
+            .form-control label,
+            .form-control input {
+                display: block;
+                width: 70%;
+            }
+
+            .form-control input {
+                border: 1px solid rgb(227, 200, 23);
+                font: inherit;
+                border-radius: 3px;
+            }
+
+            button {
+                font: inherit;
+                border: 2px solid rgb(227, 200, 23);
+                color: rgb(227, 200, 23);
+                background: white;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 0.45rem;
+            }
+            button:hover,
+            button:active {
+                background-color: rgb(226, 111, 11);
+                border: 2px solid rgb(226, 111, 11);
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-header__nav">
+                <ul class="main-header__item-list">
+                    <li class="main-header__item"><a href="/">Shop</a></li>
+                    <li class="main-header__item"><a class="active" href="/add-product">Add Product</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form class="products-form" action="/add-product" method="POST">
+                <div class="form-control">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="tit"/>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+        </main>
+    </body>
 </html>
