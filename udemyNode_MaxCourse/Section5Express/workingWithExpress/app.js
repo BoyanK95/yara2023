@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 const adminRoutes = require('./routes/admin')
 const shopRoutes = require('./routes/shop')
-
+const errorControler = require('./controllers/error')
 const app = express();
 
 /** Setting the templating-engine */
@@ -26,8 +26,6 @@ app.use(adminRoutes)
 app.use(shopRoutes)
 
 /** Path to 404 - not deffined paths */
-app.use((req, res, next) => {
-    res.status(404).render('404', {pageTitle: 'Page Not Found'})
-})
+app.use(errorControler.get404)
 
 app.listen(3000);
