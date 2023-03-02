@@ -1,36 +1,68 @@
-const db = require('../util/database')
+const {Sequelize} = require('sequelize')
 
-const Cart = require('./cart');
+const sequelize = require('../util/database')
 
-module.exports = class Product {
-  constructor(id, title, price, qtySold, qtyInStorage) {
-    this.id = id;
-    this.title = title;
-    this.price = price;
-    this.qtySold = qtySold
-    this.qtyInStorage = qtyInStorage
-  }
 
-  save() {
 
-  }
 
-  static deleteById(id) {
 
-  }
 
-  static fetchAll() {
-     return db.query('SELECT * FROM product')
-  //   db.query('SELECT * FROM product', (err, result) => {
-  //     if (err) {
-  //          console.log(err);
-  //     } else {
-  //         return result
-  //     }
-  // })
-  }
 
-  static findById(id) {
 
-  }
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const db = require('../util/database')
+
+// const Cart = require('./cart');
+
+// module.exports = class Product {
+//   constructor(id, title, price, qtySold, qtyInStorage) {
+//     this.id = id;
+//     this.title = title;
+//     this.price = price;
+//     this.qtySold = qtySold
+//     this.qtyInStorage = qtyInStorage
+//   }
+
+//   save() {
+//     db.query('INSERT INTO product (product_name, price, qty_sold, qty_in_storage, description, imageurl) VALUES ()')
+//   }
+
+//   static deleteById(id) {
+
+//   }
+
+//   static fetchAll() {
+//      return db.query('SELECT * FROM product')
+//   //   db.query('SELECT * FROM product', (err, result) => {
+//   //     if (err) {
+//   //          console.log(err);
+//   //     } else {
+//   //         return result
+//   //     }
+//   // })
+//   }
+
+//   static findById(id) {
+
+//   }
+// };
