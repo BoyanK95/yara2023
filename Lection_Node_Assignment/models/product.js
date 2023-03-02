@@ -1,7 +1,29 @@
-const {Sequelize} = require('sequelize')
+const { DataTypes} = require('sequelize')
 
 const sequelize = require('../util/database')
 
+const Product = sequelize.define('Product',{
+  product_id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  product_name: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false
+  },
+  price: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },
+  qty_sold: DataTypes.INTEGER,
+  qty_in_storage: DataTypes.INTEGER,
+  description: DataTypes.TEXT,
+  imageurl: DataTypes.STRING,
+})
+
+module.exports = Product
 
 
 
@@ -12,24 +34,7 @@ const sequelize = require('../util/database')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/** Without using Sequelize */
 // const db = require('../util/database')
 
 // const Cart = require('./cart');
