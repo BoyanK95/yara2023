@@ -25,11 +25,11 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.getProduct = (req, res, next) => {
-    const prodId = req.params.productId;
+    const prodId = req.params.product_id;
     Product.findById(prodId, (product) => {
         res.render('shop/product-detail', {
             product: product,
-            pageTitle: product.title,
+            pageTitle: product.product_name,
             path: '/products'
         });
     });
