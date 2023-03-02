@@ -1,27 +1,29 @@
 const Product = require('../models/product');
 const Cart = require('../models/cart');
-const db = require('../util/database')
-
+const db = require('../util/database');
 
 exports.getProducts = (req, res, next) => {
-  db.query('SELECT * FROM product', (error, results) => {
-        if (error) {
-            throw error;
-        }
-        console.log(results.rows);
-        res.status(200).render('shop/product-list', {
-            prods: results.rows,
-            pageTitle: 'All Products',
-            path: '/products'
-        });
-    });
-    // Product.fetchAll(products => {
-    //   res.render('shop/product-list', {
-    //     prods: products,
-    //     pageTitle: 'All Products',
-    //     path: '/products'
-    //   });
-    // });
+    //   db.query('SELECT * FROM product', (error, results) => {
+    //         if (error) {
+    //             throw error;
+    //         }
+    //         console.log(results.rows);
+    //         res.status(200).render('shop/product-list', {
+    //             prods: results.rows,
+    //             pageTitle: 'All Products',
+    //             path: '/products'
+    //         });
+    //     });
+    Product.fetchAll()
+        .then((products) => {
+            console.log(products.rows);
+            res.render('shop/product-list', {
+                prods: products.rows,
+                pageTitle: 'All Products',
+                path: '/products'
+            });
+        })
+        .catch((err) => console.log(err));
 };
 
 exports.getProduct = (req, res, next) => {
@@ -36,14 +38,19 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-    Product.fetchAll((products) => {
+    Product.fetchAll()
+    .then((products) => {
+        console.log(products.rows);
         res.render('shop/index', {
-            prods: products,
+            prods: products.rows,
             pageTitle: 'Shop',
             path: '/'
         });
-    });
+    })
+    .catch((err) => console.log(err));
 };
+
+
 
 exports.getCart = (req, res, next) => {
     Cart.getCart((cart) => {

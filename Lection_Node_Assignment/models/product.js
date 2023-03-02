@@ -20,13 +20,7 @@ module.exports = class Product {
   }
 
   static fetchAll() {
-     db.query('SELECT * FROM product', (err, result) => {
-      if (err) {
-        throw err
-      } else {
-        return result
-      }
-     })
+     return db.query('SELECT * FROM product')
   //   db.query('SELECT * FROM product', (err, result) => {
   //     if (err) {
   //          console.log(err);
