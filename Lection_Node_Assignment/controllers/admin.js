@@ -20,8 +20,8 @@ exports.postAddProduct = (req, res, next) => {
         description: description
     })
         .then((result) => {
-            // console.log(result);
             console.log('Created Product');
+            res.redirect('/admin/products');
         })
         .catch((err) => {
             console.log(`Unsuccessful request for creating a product! Error: ${err}`);
@@ -60,15 +60,15 @@ exports.postEditProduct = (req, res, next) => {
     const updatedDesc = req.body.description;
     Product.findByPk(prodId)
         .then((product) => {
-          product.product_name = updatedTitle
-          product.price = updatedPrice
-          product.description = updatedDesc
-          product.imageurl = updatedImageUrl
-          return product.save()
+            product.product_name = updatedTitle;
+            product.price = updatedPrice;
+            product.description = updatedDesc;
+            product.imageurl = updatedImageUrl;
+            return product.save();
         })
-        .then(result => {
-          console.log('PRODUCT UPDATED!!!');
-          res.redirect('/admin/products');
+        .then((result) => {
+            console.log('PRODUCT UPDATED!!!');
+            res.redirect('/admin/products');
         })
         .catch((err) => {
             console.log(err);
@@ -92,6 +92,13 @@ exports.getProducts = (req, res, next) => {
 
 exports.postDeleteProduct = (req, res, next) => {
     const prodId = req.body.productId;
-    Product.deleteById(prodId);
-    res.redirect('/admin/products');
+    Product.findByPk(prodId)
+        .then((product) => {
+          return product.destroy()
+        })
+        .then(result => {
+          console.log('PRODUCT DESTROYED !!!');
+          res.redirect('/admin/products');
+        })
+        .catch(err => console.log(err));
 };
