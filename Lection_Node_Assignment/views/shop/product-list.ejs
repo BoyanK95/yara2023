@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="card__content">
                                     <h2 class="product__price">$
-                                        <%= product.price %>
+                                        <%= Number(product.price).toFixed(2) %>
                                     </h2>
                                     <div class="product__description">
                                         <% if(!product.description) { %>

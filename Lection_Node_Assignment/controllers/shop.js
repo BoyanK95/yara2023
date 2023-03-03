@@ -3,27 +3,15 @@ const Cart = require('../models/cart');
 const db = require('../util/database');
 
 exports.getProducts = (req, res, next) => {
-    //   db.query('SELECT * FROM product', (error, results) => {
-    //         if (error) {
-    //             throw error;
-    //         }
-    //         console.log(results.rows);
-    //         res.status(200).render('shop/product-list', {
-    //             prods: results.rows,
-    //             pageTitle: 'All Products',
-    //             path: '/products'
-    //         });
-    //     });
-    Product.fetchAll()
-        .then((products) => {
-            console.log(products.rows);
-            res.render('shop/product-list', {
-                prods: products.rows,
-                pageTitle: 'All Products',
-                path: '/products'
-            });
-        })
-        .catch((err) => console.log(err));
+    Product.findAll().then(products => {
+        res.render('shop/product-list', {
+            prods: products,
+            pageTitle: 'All Products',
+            path: '/products'
+        });
+    }).catch(err => {
+        console.log(err);
+    })
 };
 
 exports.getProduct = (req, res, next) => {
@@ -38,16 +26,15 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-    Product.fetchAll()
-    .then((products) => {
-        console.log(products.rows);
+    Product.findAll().then(products => {
         res.render('shop/index', {
-            prods: products.rows,
+            prods: products,
             pageTitle: 'Shop',
             path: '/'
         });
+    }).catch(err => {
+        console.log(err);
     })
-    .catch((err) => console.log(err));
 };
 
 
