@@ -1,5 +1,5 @@
 const express = require('express');
-/** Requiring All Variables */
+/** Requiring All Module Variables */
 const path = require('path');
 const bodyParser = require('body-parser');
 const sequelize = require('./util/database');
@@ -33,8 +33,8 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 /** Seting up relations between tables */
-Product.belongsTo(User, { constraints: true, foreignKey: 'user_id'})
-User.hasMany(Product)
+Product.belongsTo(User, { constraints: true, foreignKey: 'user_id' });
+User.hasMany(Product);
 Product.hasMany(Order, { foreignKey: 'product_id' });
 Client.hasMany(Order, { foreignKey: 'client_id' });
 Supplier.hasMany(Order, { foreignKey: 'supplier_id' });
@@ -42,14 +42,29 @@ Order.belongsTo(Product, { foreignKey: 'product_id' });
 Order.belongsTo(Client, { foreignKey: 'client_id' });
 Order.belongsTo(Supplier, { foreignKey: 'supplier_id' });
 Order.hasOne(Invoice, { foreignKey: 'order_id' });
-Product.belongsToMany(Storage, StorageProduct, { through: 'product_storage', foreignKey: 'product_id' });
-Storage.belongsToMany(Product, StorageProduct, { through: 'product_storage', foreignKey: 'storage_id' });
+Product.belongsToMany(Storage, { through: StorageProduct });
+Storage.belongsToMany(Product, { through: StorageProduct });
 
 /** Seting sequelize with sync() */
 sequelize
     .sync()
     .then((result) => {
-        // console.log(result);
+        return User.findByPk(1);
+    })
+    .then((user) => {
+        if (!user) {
+            return User.create({
+                name: 'Boyan',
+                email: 'boyan95@abv.bg',
+                password: 'password123',
+                identification: (Math.random() * 1000).toString(), //Generated: 171.06528593286296
+                rights: 'Admin'
+            });
+        }
+        return user
+    })
+    .then((user) => {
+        // console.log(user);
         app.listen(3000);
     })
     .catch((err) => {
