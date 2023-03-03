@@ -9,3 +9,5 @@ const StorageProduct = sequelize.define('storageProduct', {
       autoIncrement: true,
     },
   });
+
+  module.exports = StorageProduct

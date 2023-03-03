@@ -6,7 +6,9 @@ const Order = sequelize.define('order', {
         order_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            unique: true,
+            allowNull: false
         },
         qty: {
             type: DataTypes.INTEGER,

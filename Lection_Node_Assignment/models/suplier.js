@@ -7,7 +7,8 @@ const Supplier = sequelize.define('supplier', {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        unique: true
+        unique: true,
+        allowNull: false
     },
     supplier_name: {
         type: DataTypes.STRING,

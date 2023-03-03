@@ -7,6 +7,8 @@ const Product = sequelize.define('product',{
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
+    unique: true,
+    allowNull: false
   },
   product_name: {
     type: DataTypes.STRING,

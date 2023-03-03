@@ -6,7 +6,9 @@ const Client = sequelize.define('client', {
     client_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
+        allowNull: false,
+        unique: true
     },
     client_name: {
         type: DataTypes.STRING,

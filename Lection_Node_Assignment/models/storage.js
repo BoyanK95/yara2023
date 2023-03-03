@@ -7,11 +7,18 @@ const Storage = sequelize.define('storage', {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      unique: true
     },
-    country: DataTypes.STRING,
+    country: {
+        type:DataTypes.STRING,
+        allowNull:false
+    },
     city: DataTypes.STRING,
     postal_code: DataTypes.SMALLINT,
-    address: DataTypes.STRING,
+    address: {
+        type:DataTypes.STRING,
+        allowNull:false
+    },
   });
 
   module.exports = Storage
