@@ -88,3 +88,19 @@
 .admin__navigation a:hover {
     color: white;
 }
+
+#add-client-btn {
+    font-weight: 600;
+    font-size: 1.7rem;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 7px;
+}
+
+#add-supplier-btn {
+    font-weight: 600;
+    font-size: 1.7rem;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 7px;
+}
