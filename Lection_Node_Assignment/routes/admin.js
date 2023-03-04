@@ -29,6 +29,7 @@ router.post('/add-client', clientController.postAddClient);
 
 // EDIT => /admin/edit-product/client/supplier
 router.post('/edit-product', adminController.postEditProduct);
+router.post('/edit-client', clientController.postEditClient);
 
 //Deleting products
 router.post('/delete-product', adminController.postDeleteProduct);
