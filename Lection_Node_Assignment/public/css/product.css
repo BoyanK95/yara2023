@@ -53,11 +53,15 @@
     margin-bottom: 0.5rem;
 }
 
+.number_of_orders {
+    color: rgb(4, 93, 4);
+}
+
 .phone_number {
     font-size: 1rem;
     font-weight: 400;
-    color: rgb(105, 104, 104);
-    padding: 0.5rem;
+    color: rgb(119, 117, 117);
+    padding: 1rem;
 }
 
 .product__description {

@@ -36,7 +36,7 @@
                                     <h1 class="product__title">
                                         <%= product.client_name %>
                                     </h1>
-                                    <h3> <%= product.client_email %></h3>
+                                    <h5 class="centered"> <%= product.email %></h5>
                                 </header>
                                 <div class="card__image">
                                     <% if(!product.imageurl) { %>
@@ -49,10 +49,10 @@
                                     <h3 class="product__country">
                                         <%= product.country %>
                                     </h3>
-                                    <h2>Country Code: 
+                                    <h3 class="centered">Country Code:
                                         <%= product.countryCode %>
-                                    </h2>
-                                    <div class="number_of_orders">
+                                    </h3>
+                                    <div class="number_of_orders centered">
                                         <h2> Number of Orders: 
                                         <%= product.number_of_orders %>
                                         </h2>
@@ -60,7 +60,7 @@
                                     <h2 class="phone_number"> tel: +350 
                                         <%= product.phone_number %>
                                     </h2>
-                                    <p class="product__description">
+                                    <p class="centered"> Address:
                                         <%= product.address %>
                                     </p>
                                 </div>
