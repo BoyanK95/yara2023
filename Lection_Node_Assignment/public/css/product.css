@@ -47,6 +47,18 @@
     color: #4d4d4d;
     margin-bottom: 0.5rem;
 }
+.product__country {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.phone_number {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(105, 104, 104);
+    padding: 0.5rem;
+}
 
 .product__description {
     text-align: center;

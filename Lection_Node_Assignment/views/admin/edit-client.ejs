@@ -9,8 +9,8 @@
     <main>
         <form class="client-form" action="/admin/<% if (editing) { %>edit-client<% } else { %>add-client<% } %>" method="POST">
             <div class="form-control">
-                <label for="title">Client name</label>
-                <input type="text" name="title" id="title" value="<% if (editing) { %><%= client.client %><% } %>">
+                <label for="clientName">Client name</label>
+                <input type="text" name="clientName" id="clientName" value="<% if (editing) { %><%= client.client_name %><% } %>">
             </div>
             <div class="form-control">
                 <label for="email">Client email</label>
@@ -45,7 +45,7 @@
                 <textarea name="address" id="address" rows="5"><% if (editing) { %><%= client.address %><% } %></textarea>
             </div>
             <% if (editing) { %>
-                <input type="hidden" value="<%= client.product_id %>" name="productId">
+                <input type="hidden" value="<%= client.client_id %>" name="clientId">
             <% } %>
 
             <button class="btn" type="submit"><% if (editing) { %>Update Client<% } else { %>Add Client<% } %></button>

@@ -25,27 +25,33 @@ exports.getAddClient = (req, res, next) => {
 };
 
 exports.postAddClient = (req, res, next) => {
-    const supplierName = req.body.supplierName;
+    const clientName = req.body.clientName;
     const email = req.body.email;
     const country = req.body.country;
     const countryCode = req.body.countryCode;
-    const phoneNumber = req.body.phoneNumber;
+    const city = req.body.city;
+    const postal_code = req.body.postal_code;
+    const phone_number = req.body.phone_number;
+    const number_of_orders = req.body.number_of_orders;
     const address = req.body.address;
     Client.create({
-        supplier_name: supplierName,
-        phone_number: phoneNumber,
+        client_name: clientName,
+        phone_number: phone_number,
         email: email,
         country: country,
         countryCode: countryCode,
+        postal_code: postal_code,
+        number_of_orders: number_of_orders,
+        city: city,
         address: address,
         user_id: req.user.user_id
     })
         .then((result) => {
-            console.log('Registered Supplier!');
-            res.redirect('/admin/suppliers');
+            console.log('Registered Client!');
+            res.redirect('/admin/clients');
         })
         .catch((err) => {
-            console.log(`Unsuccessful request for registering supplier! Error: ${err}`);
+            console.log(`Unsuccessful request for registering client! Error: ${err}`);
         });
 };
 // exports.postDeleteProduct = (req, res, next) => {
