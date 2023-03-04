@@ -4,14 +4,16 @@ const express = require('express');
 
 const adminController = require('../controllers/admin');
 const clientController = require('../controllers/client')
+const supplierController = require('../controllers/supplier')
 
 const router = express.Router();
 //Get products/add products, get edit products
 router.get('/add-product', adminController.getAddProduct);
 router.get('/products', adminController.getProducts);
 
-//Get clients routes
+//Get clients/suppliers routes
 router.get('/clients', clientController.getClient)
+router.get('/suppliers', supplierController.getSupplier)
 
 router.get('/edit-product/:productId', adminController.getEditProduct);
 
