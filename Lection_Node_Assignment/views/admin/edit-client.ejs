@@ -104,7 +104,7 @@
                 <textarea name="address" id="address" rows="5"><% if (editing) { %><%= client.address %><% } %></textarea>
             </div>
             <% if (editing) { %>
-                <input type="hidden" value="<%= client.product_id %>" name="productId">
+                <input type="hidden" value="<%= client.client_id %>" name="clientId">
             <% } %>
 
             <button class="btn" type="submit"><% if (editing) { %>Update Client<% } else { %>Add Client<% } %></button>

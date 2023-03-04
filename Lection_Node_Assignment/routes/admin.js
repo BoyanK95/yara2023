@@ -22,11 +22,14 @@ router.get('/edit-product/:productId', adminController.getEditProduct);
 router.get('/edit-supplier/:supplierId', supplierController.getEditSupplier);
 router.get('/edit-client/:clientId', clientController.getEditClient);
 
-// /admin/add-product/supplier/client => POST
+//POST/ADD =>  admin/add-product/supplier/client
 router.post('/add-product', adminController.postAddProduct);
 router.post('/add-supplier', supplierController.postAddSupplier);
 router.post('/add-client', clientController.postAddClient);
+
+// EDIT => /admin/edit-product/client/supplier
 router.post('/edit-product', adminController.postEditProduct);
+
 //Deleting products
 router.post('/delete-product', adminController.postDeleteProduct);
 

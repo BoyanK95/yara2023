@@ -80,15 +80,48 @@ exports.getEditClient = (req, res, next) => {
         });
 };
 
-// exports.postDeleteProduct = (req, res, next) => {
-//     const prodId = req.body.productId;
-//     Client.findByPk(prodId)
-//         .then((product) => {
-//           return product.destroy()
-//         })
-//         .then(result => {
-//           console.log('PRODUCT DESTROYED !!!');
-//           res.redirect('/admin/clients');
-//         })
-//         .catch(err => console.log(err));
-// };
+exports.postEditClient = (req, res, next) => {
+    const clinetId = req.body.clientId;
+    const updatedClientName = req.body.clientName;
+    const updatedEmail = req.body.email;
+    const updatedCountry = req.body.country;
+    const updatedCountryCode = req.body.countryCode;
+    const updatedCity = req.body.city;
+    const updatedPostlCode = req.body.postal_code;
+    const phoneNumber = req.body.phone_number;
+    const updatedNumberOfOrders = req.body.number_of_orders;
+    const updatedAddress = req.body.address;
+    Client.findByPk(clinetId)
+        .then((client) => {
+            client.client_name = updatedClientName;
+            client.email = updatedEmail
+            client.country = updatedCountry
+            client.countryCode = updatedCountryCode
+            client.city = updatedCity
+            client.postal_code = updatedPostlCode
+            client.address = updatedAddress;
+            client.phone_number = phoneNumber;
+            client.number_of_orders = updatedNumberOfOrders;
+            return client.save();
+        })
+        .then((result) => {
+            console.log('CLIENT UPDATED!!!');
+            res.redirect('/admin/clients');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+exports.postDeleteClient = (req, res, next) => {
+    const clientId = req.body.clientId;
+    Client.findByPk(clientId)
+        .then((client) => {
+          return client.destroy()
+        })
+        .then(result => {
+          console.log('CLIENT REMOVED !!!');
+          res.redirect('/admin/clients');
+        })
+        .catch(err => console.log(err));
+};
