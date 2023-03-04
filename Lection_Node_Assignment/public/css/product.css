@@ -25,3 +25,24 @@
 .product__description {
     text-align: center;
 }
+
+.admin__navigation {
+    border-bottom: 1px solid darkgreen;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.admin__navigation img {
+    height: 7rem;
+}
+
+.admin__navigation a {
+    text-decoration: none;
+    color: #52b521;
+}
+
+.admin__navigation a:hover {
+    color: white;
+}
