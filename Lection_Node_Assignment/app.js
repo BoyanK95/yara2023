@@ -27,6 +27,7 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+/** Middle-ware for passing user through requests*/
 app.use((req, res, next) => {
     User.findByPk(1)
         .then(user => {
