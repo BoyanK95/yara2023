@@ -9,8 +9,8 @@
     <main>
         <form class="supplier-form" action="/admin/<% if (editing) { %>edit-supplier<% } else { %>add-supplier<% } %>" method="POST">
             <div class="form-control">
-                <label for="title">Supplier name</label>
-                <input type="text" name="title" id="title" value="<% if (editing) { %><%= supplier.supplier_name %><% } %>">
+                <label for="supplierName">Supplier name</label>
+                <input type="text" name="supplierName" id="supplierName" value="<% if (editing) { %><%= supplier.supplier_name %><% } %>">
             </div>
             <div class="form-control">
                 <label for="email">Supplier email</label>
@@ -41,10 +41,10 @@
                 <textarea name="address" id="address" rows="5"><% if (editing) { %><%= supplier.address %><% } %></textarea>
             </div>
             <% if (editing) { %>
-                <input type="hidden" value="<%= supplier.product_id %>" name="productId">
+                <input type="hidden" value="<%= supplier.supplier_id %>" name="supplierId">
             <% } %>
 
-            <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
+            <button class="btn" type="submit"><% if (editing) { %>Update Supplier<% } else { %>Add Supplier<% } %></button>
         </form>
     </main>
 <%- include('../includes/end.ejs') %>

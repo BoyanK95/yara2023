@@ -7,32 +7,40 @@
    <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
+        <form class="client-form" action="/admin/<% if (editing) { %>edit-client<% } else { %>add-client<% } %>" method="POST">
             <div class="form-control">
                 <label for="title">Client name</label>
-                <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.client %><% } %>">
+                <input type="text" name="title" id="title" value="<% if (editing) { %><%= client.client %><% } %>">
             </div>
             <div class="form-control">
                 <label for="email">Client email</label>
-                <input type="text" name="email" id="email" value="<% if (editing) { %><%= product.email %><% } %>">
+                <input type="text" name="email" id="email" value="<% if (editing) { %><%= client.email %><% } %>">
             </div>
             <div class="form-control">
                 <label for="country">Country</label>
-                <input type="text" name="country" id="country" value="<% if (editing) { %><%= product.country %><% } %>">
+                <input type="text" name="country" id="country" value="<% if (editing) { %><%= client.country %><% } %>">
             </div>
             <div class="form-control">
                 <label for="city">City</label>
-                <input type="number" name="city" id="city" step="0.01" value="<% if (editing) { %><%= product.city %><% } %>">
+                <input type="text" name="city" id="city" value="<% if (editing) { %><%= client.city %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="postal_code">Postal Code</label>
+                <input type="number" name="postal_code" id="postal_code" step="1" value="<% if (editing) { %><%= client.postal_code %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="number_of_orders">Number of Orders</label>
+                <input type="number" name="number_of_orders" id="number_of_orders" step="1" value="<% if (editing) { %><%= client.number_of_orders %><% } %>">
             </div>
             <div class="form-control">
                 <label for="address">Address</label>
-                <textarea name="address" id="address" rows="5"><% if (editing) { %><%= product.address %><% } %></textarea>
+                <textarea name="address" id="address" rows="5"><% if (editing) { %><%= client.address %><% } %></textarea>
             </div>
             <% if (editing) { %>
-                <input type="hidden" value="<%= product.product_id %>" name="productId">
+                <input type="hidden" value="<%= client.product_id %>" name="productId">
             <% } %>
 
-            <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
+            <button class="btn" type="submit"><% if (editing) { %>Update Client<% } else { %>Add Client<% } %></button>
         </form>
     </main>
 <%- include('../includes/end.ejs') %>

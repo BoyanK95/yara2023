@@ -20,8 +20,10 @@ router.get('/add-supplier', supplierController.getAddSupplier);
 
 router.get('/edit-product/:productId', adminController.getEditProduct);
 
-// /admin/add-product => POST
+// /admin/add-product/supplier/client => POST
 router.post('/add-product', adminController.postAddProduct);
+router.post('/add-supplier', supplierController.postAddSupplier);
+router.post('/add-client', clientController.postAddClient);
 router.post('/edit-product', adminController.postEditProduct);
 //Deleting products
 router.post('/delete-product', adminController.postDeleteProduct);
