@@ -17,8 +17,9 @@ router.get('/suppliers', supplierController.getSupplier)
 router.get('/add-client', clientController.getAddClient);
 router.get('/add-supplier', supplierController.getAddSupplier);
 
-
+//Get edit product/supplier/client*
 router.get('/edit-product/:productId', adminController.getEditProduct);
+router.get('/edit-supplier/:supplierId', supplierController.getEditSupplier);
 
 // /admin/add-product/supplier/client => POST
 router.post('/add-product', adminController.postAddProduct);

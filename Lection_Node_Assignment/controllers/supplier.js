@@ -47,3 +47,28 @@ exports.postAddSupplier = (req, res, next) => {
             console.log(`Unsuccessful request for registering supplier! Error: ${err}`);
         });
 };
+
+exports.getEditSupplier = (req, res, next) => {
+    const editMode = req.query.edit;
+    if (!editMode) {
+        return res.redirect('/');
+    }
+    const supplierId = req.params.supplierId;
+    console.log(supplierId);
+    Supplier.findByPk(supplierId)
+        .then((supplier) => {
+            if (!supplier) {
+                return res.redirect('/');
+            }
+            res.render('admin/edit-supplier', {
+                pageTitle: 'Edit Supplier',
+                path: '/admin/edit-supplier',
+                editing: editMode,
+                supplier: supplier
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+            res.redirect('/');
+        });
+};
