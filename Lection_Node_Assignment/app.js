@@ -17,7 +17,7 @@ const errorController = require('./controllers/error');
 
 const app = express();
 
-/** Seting views format */
+/** Setting views format */
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -27,12 +27,21 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-/** Seting Routes */
+app.use((req, res, next) => {
+    User.findByPk(1)
+        .then(user => {
+            req.user = user;
+            next()
+        })
+        .catch(err => console.log(err))
+})
+
+/** Setting Routes */
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(errorController.get404);
 
-/** Seting up relations between tables */
+/** Setting up relations between tables */
 Product.belongsTo(User, { constraints: true, foreignKey: 'user_id' });
 User.hasMany(Product);
 Product.hasMany(Order, { foreignKey: 'product_id' });
@@ -45,7 +54,7 @@ Order.hasOne(Invoice, { foreignKey: 'order_id' });
 Product.belongsToMany(Storage, { through: StorageProduct });
 Storage.belongsToMany(Product, { through: StorageProduct });
 
-/** Seting sequelize with sync() */
+/** Setting sequelize with sync() */
 sequelize
     .sync()
     .then((result) => {

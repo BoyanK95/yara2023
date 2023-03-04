@@ -6,6 +6,14 @@
         <%- include('../includes/navigation.ejs') %>
 
             <main>
+                <div class="admin__navigation">
+                    <div class="client__container btn">
+                        <a href="/admin/clients">Show Clients</a>
+                    </div>
+                    <div class="client__container btn">
+                        <a href="/admin/suppliers">Show Suppliers</a>
+                    </div>
+                </div>
                 <% if (prods.length > 0) { %>
                     <div class="grid">
                         <% for (let product of prods) { %>
