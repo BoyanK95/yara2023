@@ -14,6 +14,9 @@ router.get('/products', adminController.getProducts);
 //Get clients/suppliers routes
 router.get('/clients', clientController.getClient)
 router.get('/suppliers', supplierController.getSupplier)
+router.get('/add-client', clientController.getAddClient);
+router.get('/add-supplier', supplierController.getAddSupplier);
+
 
 router.get('/edit-product/:productId', adminController.getEditProduct);
 

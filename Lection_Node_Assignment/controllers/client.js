@@ -15,6 +15,14 @@ exports.getClient = (req, res, next) => {
         });
 };
 
+
+exports.getAddClient = (req, res, next) => {
+    res.render('admin/edit-client', {
+        pageTitle: 'Add Client',
+        path: '/admin/add-client',
+        editing: false
+    });
+};
 // exports.postDeleteProduct = (req, res, next) => {
 //     const prodId = req.body.productId;
 //     Client.findByPk(prodId)

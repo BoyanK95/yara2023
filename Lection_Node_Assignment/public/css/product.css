@@ -11,6 +11,19 @@
     margin: 1rem;
 }
 
+.supplier-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.supplier-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
 .product__title {
     font-size: 1.2rem;
     text-align: center;

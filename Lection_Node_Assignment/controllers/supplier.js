@@ -14,3 +14,11 @@ exports.getSupplier = (req, res, next) => {
             res.redirect('/');
         });
 };
+
+exports.getAddSupplier = (req, res, next) => {
+    res.render('admin/edit-supplier', {
+        pageTitle: 'Add Supplier',
+        path: '/admin/add-supplier',
+        editing: false
+    });
+};
