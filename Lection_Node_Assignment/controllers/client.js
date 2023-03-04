@@ -81,7 +81,7 @@ exports.getEditClient = (req, res, next) => {
 };
 
 exports.postEditClient = (req, res, next) => {
-    const clinetId = req.body.clientId;
+    const clientId = req.body.clientId;
     const updatedClientName = req.body.clientName;
     const updatedEmail = req.body.email;
     const updatedCountry = req.body.country;
@@ -91,7 +91,7 @@ exports.postEditClient = (req, res, next) => {
     const phoneNumber = req.body.phone_number;
     const updatedNumberOfOrders = req.body.number_of_orders;
     const updatedAddress = req.body.address;
-    Client.findByPk(clinetId)
+    Client.findByPk(clientId)
         .then((client) => {
             client.client_name = updatedClientName;
             client.email = updatedEmail

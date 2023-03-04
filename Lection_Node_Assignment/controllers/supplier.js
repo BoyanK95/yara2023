@@ -72,3 +72,34 @@ exports.getEditSupplier = (req, res, next) => {
             res.redirect('/');
         });
 };
+
+exports.postEditSupplier = (req, res, next) => {
+    const supplierId = req.body.supplierId;
+    const updatedSupplierName = req.body.supplierName;
+    const updatedEmail = req.body.email;
+    const updatedCountry = req.body.country;
+    const updatedCountryCode = req.body.countryCode;
+    const updatedCity = req.body.city;
+    const updatedPostlCode = req.body.postal_code;
+    const phoneNumber = req.body.phoneNumber;
+    const updatedAddress = req.body.address;
+    Supplier.findByPk(supplierId)
+        .then((supplier) => {
+            supplier.supplier_name = updatedSupplierName;
+            supplier.email = updatedEmail
+            supplier.country = updatedCountry
+            supplier.countryCode = updatedCountryCode
+            supplier.city = updatedCity
+            supplier.postal_code = updatedPostlCode
+            supplier.address = updatedAddress;
+            supplier.phone_number = phoneNumber;
+            return supplier.save();
+        })
+        .then((result) => {
+            console.log('SUPPLIER UPDATED!!!');
+            res.redirect('/admin/suppliers');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
