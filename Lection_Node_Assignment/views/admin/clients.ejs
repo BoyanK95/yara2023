@@ -10,7 +10,7 @@
                 <div class="admin__navigation">
                     <div class="client__container btn">
                         <div class="clientImg__container">
-                            <img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" alt="client">
+                            <img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" alt="">
                         </div>
                         <a href="/admin/clients">Show Clients</a>
                     </div>
@@ -24,28 +24,40 @@
                 <br>
 
                 <!-- Products -->
-                <% if (prods.length > 0) { %>
+                <% if (data.length > 0) { %>
                     <div class="grid">
-                        <% for (let product of prods) { %>
+                        <% for (let product of data) { %>
                             <article class="card product-item">
                                 <header class="card__header">
                                     <h1 class="product__title">
-                                        <%= product.product_name %>
+                                        <%= product.client_name %>
                                     </h1>
+                                    <h3> <%= product.client_email %></h3>
                                 </header>
                                 <div class="card__image">
                                     <% if(!product.imageurl) { %>
-                                        <img src="https://miro.medium.com/max/793/1*CfNQ1YaiOJ8OQ6fPEPIVDQ.png" alt="<%= product.product_name %>">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" alt="<%= product.client_name %>">
                                     <% } else { %>
-                                        <img src="<%= product.imageurl %>" alt="<%= product.product_name %>">
+                                        <img src="<%= product.imageurl %>" alt="<%= product.client_name %>">
                                     <% } %>
                                 </div>
                                 <div class="card__content">
-                                    <h2 class="product__price">$
-                                        <%= Number(product.price).toFixed(2) %>
+                                    <h3 class="product__price">
+                                        <%= product.country %>
+                                    </h3>
+                                    <h2>
+                                        <%= product.countryCode %>
+                                    </h2>
+                                    <div class="number_of_orders">
+                                        <h2>
+                                        <%= product.number_of_orders %>
+                                        </h2>
+                                    </div>
+                                    <h2 class="phone_number">
+                                        <%= product.phone_number %>
                                     </h2>
                                     <p class="product__description">
-                                        <%= product.description %>
+                                        <%= product.address %>
                                     </p>
                                 </div>
                                 <div class="card__actions">
@@ -60,7 +72,7 @@
                             <% } %>
                     </div>
                     <% } else { %>
-                        <h1 class="centered">No Products Found!</h1>
+                        <h1 class="centered">You have no clients!</h1>
                         <% } %>
             </main>
             <%- include('../includes/end.ejs') %>
