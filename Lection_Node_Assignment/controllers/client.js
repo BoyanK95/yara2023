@@ -54,6 +54,32 @@ exports.postAddClient = (req, res, next) => {
             console.log(`Unsuccessful request for registering client! Error: ${err}`);
         });
 };
+
+exports.getEditClient = (req, res, next) => {
+    const editMode = req.query.edit;
+    if (!editMode) {
+        return res.redirect('/');
+    }
+    const clientId = req.params.clientId;
+    console.log(clientId);
+    Client.findByPk(clientId)
+        .then((client) => {
+            if (!client) {
+                return res.redirect('/');
+            }
+            res.render('admin/edit-client', {
+                pageTitle: 'Edit Client',
+                path: '/admin/edit-client',
+                editing: editMode,
+                client: client
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+            res.redirect('/');
+        });
+};
+
 // exports.postDeleteProduct = (req, res, next) => {
 //     const prodId = req.body.productId;
 //     Client.findByPk(prodId)
