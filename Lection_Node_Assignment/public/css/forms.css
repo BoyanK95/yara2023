@@ -21,3 +21,7 @@
 .form-control textarea:focus {
   outline-color: #00695c;
 }
+
+span {
+  font-size: 0.7rem;
+}

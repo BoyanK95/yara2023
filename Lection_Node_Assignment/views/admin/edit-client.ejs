@@ -21,15 +21,23 @@
                 <input type="text" name="country" id="country" value="<% if (editing) { %><%= client.country %><% } %>">
             </div>
             <div class="form-control">
-                <label for="city">City</label>
+                <label for="countryCode">Country Code *</label>
+                <input type="text" name="countryCode" id="countryCode" value="<% if (editing) { %><%= client.countryCode %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="city">City *</label>
                 <input type="text" name="city" id="city" value="<% if (editing) { %><%= client.city %><% } %>">
             </div>
             <div class="form-control">
-                <label for="postal_code">Postal Code</label>
+                <label for="postal_code">Postal Code *</label>
                 <input type="number" name="postal_code" id="postal_code" step="1" value="<% if (editing) { %><%= client.postal_code %><% } %>">
             </div>
             <div class="form-control">
-                <label for="number_of_orders">Number of Orders</label>
+                <label for="phone_number">Phone Number</label>
+                <input type="number" name="phone_number" id="phone_number" step="1" value="<% if (editing) { %><%= client.phone_number %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="number_of_orders">Number of Orders * <span>(default value is 0)</span></label>
                 <input type="number" name="number_of_orders" id="number_of_orders" step="1" value="<% if (editing) { %><%= client.number_of_orders %><% } %>">
             </div>
             <div class="form-control">
