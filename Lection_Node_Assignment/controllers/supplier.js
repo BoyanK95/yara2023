@@ -6,7 +6,8 @@ exports.getSupplier = (req, res, next) => {
             res.render('admin/suppliers', {
                 data: supliers,
                 pageTitle: 'Suppliers',
-                path: '/admin/suppliers'
+                path: '/admin/suppliers',
+                isAuthenticated: req.isLoggedIn
             });
         })
         .catch((err) => {
@@ -19,7 +20,8 @@ exports.getAddSupplier = (req, res, next) => {
     res.render('admin/edit-supplier', {
         pageTitle: 'Add Supplier',
         path: '/admin/add-supplier',
-        editing: false
+        editing: false,
+        isAuthenticated: req.isLoggedIn
     });
 };
 

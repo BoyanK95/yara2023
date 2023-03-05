@@ -6,7 +6,8 @@ exports.getClient = (req, res, next) => {
             res.render('admin/clients', {
                 data: clients,
                 pageTitle: 'Clients',
-                path: '/admin/clients'
+                path: '/admin/clients',
+                isAuthenticated: req.isLoggedIn
             });
         })
         .catch((err) => {
@@ -20,7 +21,8 @@ exports.getAddClient = (req, res, next) => {
     res.render('admin/edit-client', {
         pageTitle: 'Add Client',
         path: '/admin/add-client',
-        editing: false
+        editing: false,
+        isAuthenticated: req.isLoggedIn
     });
 };
 
