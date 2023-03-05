@@ -65,6 +65,7 @@ Storage.belongsToMany(Product, { through: StorageProduct });
 sequelize
     // .sync({force: true})
     .sync()
+    //Creating admin user (name: Boyan) with PK = 1 
     .then((result) => {
         return User.findByPk(1);
     })
@@ -81,7 +82,10 @@ sequelize
         return user;
     })
     .then((user) => {
-        // console.log(user);
+        // Creating Cart for user Boyan
+        return user.createCart()
+    })
+    .then(cart => {
         app.listen(3000);
     })
     .catch((err) => {
