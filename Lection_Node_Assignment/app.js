@@ -11,6 +11,8 @@ const Storage = require('./models/storage');
 const StorageProduct = require('./models/storageProduct');
 const Supplier = require('./models/suplier');
 const User = require('./models/user');
+const Cart = require('./models/cart');
+const CartItem = require('./models/cart-item');
 const Invoice = require('./models/invoice');
 
 const errorController = require('./controllers/error');
@@ -30,12 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 /** Middle-ware for passing user through requests*/
 app.use((req, res, next) => {
     User.findByPk(1)
-        .then(user => {
+        .then((user) => {
             req.user = user;
-            next()
+            next();
         })
-        .catch(err => console.log(err))
-})
+        .catch((err) => console.log(err));
+});
 
 /** Setting Routes */
 app.use('/admin', adminRoutes);
@@ -45,6 +47,10 @@ app.use(errorController.get404);
 /** Setting up relations between tables */
 Product.belongsTo(User, { constraints: true, foreignKey: 'user_id' });
 User.hasMany(Product);
+User.hasOne(Cart);
+Cart.belongsTo(User);
+Cart.belongsToMany(Product, { through: CartItem });
+Product.belongsToMany(Cart, { through: CartItem });
 Product.hasMany(Order, { foreignKey: 'product_id' });
 Client.hasMany(Order, { foreignKey: 'client_id' });
 Supplier.hasMany(Order, { foreignKey: 'supplier_id' });
@@ -57,6 +63,7 @@ Storage.belongsToMany(Product, { through: StorageProduct });
 
 /** Setting sequelize with sync() */
 sequelize
+    // .sync({force: true})
     .sync()
     .then((result) => {
         return User.findByPk(1);
@@ -67,11 +74,11 @@ sequelize
                 name: 'Boyan',
                 email: 'boyan95@abv.bg',
                 password: 'password123',
-                identification: (Math.random() * 1000).toString(), //Generated: 171.06528593286296
+                identification: (Math.random() * 1000).toString(), //Generated: 856.1519576783945
                 rights: 'Admin'
             });
         }
-        return user
+        return user;
     })
     .then((user) => {
         // console.log(user);

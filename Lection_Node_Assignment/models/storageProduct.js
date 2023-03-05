@@ -8,6 +8,7 @@ const StorageProduct = sequelize.define('storageProduct', {
       primaryKey: true,
       autoIncrement: true,
     },
+    quantity: DataTypes.INTEGER
   });
 
   module.exports = StorageProduct

@@ -19,8 +19,14 @@ const Product = sequelize.define('product',{
     type: DataTypes.FLOAT,
     allowNull: false
   },
-  qty_sold: DataTypes.INTEGER,
-  qty_in_storage: DataTypes.INTEGER,
+  qty_sold: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0
+  },
+  qty_in_storage: {
+    type: DataTypes.INTEGER,
+    defaultValue: 1
+  },
   description: DataTypes.TEXT,
   imageurl: DataTypes.STRING,
 })
