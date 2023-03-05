@@ -1,8 +1,9 @@
 const express = require('express');
-/** Requiring All Module Variables */
+/** Requiring All Dep */
 const path = require('path');
 const bodyParser = require('body-parser');
 const sequelize = require('./util/database');
+const session = require('express-session')
 
 const Product = require('./models/product');
 const Client = require('./models/client');
@@ -30,6 +31,7 @@ const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret: 'my-secret-code', resave: false, saveUninitialized: false, cookie: { maxAge: 600000 }}))
 
 /** Middle-ware for passing user through requests*/
 app.use((req, res, next) => {
