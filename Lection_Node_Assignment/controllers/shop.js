@@ -1,6 +1,7 @@
 const Product = require('../models/product');
 const Cart = require('../models/cart');
 const db = require('../util/database');
+const Order = require('../models/order');
 
 exports.getProducts = (req, res, next) => {
     Product.findAll()
@@ -110,10 +111,14 @@ exports.postCartDeleteProduct = (req, res, next) => {
 };
 
 exports.getOrders = (req, res, next) => {
-    res.render('shop/orders', {
-        path: '/orders',
-        pageTitle: 'Your Orders'
-    });
+    Order.findAll().then((orders) => {
+        res.render('shop/orders', {
+            path: '/orders',
+            pageTitle: 'Your Orders',
+            orders: orders
+        });
+    })
+    .catch(err => console.log(err))
 };
 
 exports.getCheckout = (req, res, next) => {
