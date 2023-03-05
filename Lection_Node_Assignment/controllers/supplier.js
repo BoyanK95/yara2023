@@ -66,7 +66,8 @@ exports.getEditSupplier = (req, res, next) => {
                 pageTitle: 'Edit Supplier',
                 path: '/admin/edit-supplier',
                 editing: editMode,
-                supplier: supplier
+                supplier: supplier,
+                isAuthenticated: req.isLoggedIn
             });
         })
         .catch((err) => {
