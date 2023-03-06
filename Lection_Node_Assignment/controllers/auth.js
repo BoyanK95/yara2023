@@ -14,3 +14,13 @@ exports.postLogin = (req, res, next) => {
     req.session.isLoggedIn = true
     res.redirect('/admin/products')
 };
+
+exports.getSignup = (req, res, next) => {
+    res.render('auth/signup', {
+      path: '/signup',
+      pageTitle: 'Signup',
+      isAuthenticated: false
+    });
+  };
+
+exports.postSignup = (req, res, next) => {};
