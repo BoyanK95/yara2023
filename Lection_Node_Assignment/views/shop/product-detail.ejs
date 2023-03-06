@@ -13,8 +13,9 @@
                     <img src="<%= product.imageurl %>" alt="<%= product.product_name %>">
                 <% } %>
             </div>
-            <h2><%= Number(product.price).toFixed(2)%></h2>
-            <p><%= product.description %></p>
+            <h2>Price: <%= Number(product.price).toFixed(2)%> $</h2>
+            <h2 class="qtySold">Quantity Sold: <%= product.qty_sold%></h2>
+            <p class="description">Description: <%= product.description %></p>
             <!-- <%- include('../includes/add-to-cart.ejs') %> -->
         </main>
         <%- include('../includes/end.ejs') %>

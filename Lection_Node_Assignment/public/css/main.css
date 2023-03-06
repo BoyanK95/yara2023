@@ -23,6 +23,15 @@ form {
   text-align: center;
 }
 
+.qtySold {
+  color: darkgreen;
+}
+
+.description {
+  color: rgb(106, 106, 106);
+  font-size: 0.9rem;
+}
+
 .image {
   height: 20rem;
 }
