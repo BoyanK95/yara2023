@@ -79,13 +79,15 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
+    const isLoggedIn = req.session.isLoggedIn
+
     Product.findAll()
         .then((products) => {
             res.render('admin/products', {
                 prods: products,
                 pageTitle: 'Admin Products',
                 path: '/admin/products',
-                isAuthenticated: req.isLoggedIn
+                isAuthenticated: isLoggedIn
             });
         })
         .catch((err) => {
