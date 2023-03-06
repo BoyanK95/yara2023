@@ -32,8 +32,9 @@ router.post('/edit-product', adminController.postEditProduct);
 router.post('/edit-client', clientController.postEditClient);
 router.post('/edit-supplier', supplierController.postEditSupplier);
 
-//Deleting products
+//Deleting product/client/supplier
 router.post('/delete-product', adminController.postDeleteProduct);
 router.post('/delete-client', clientController.postDeleteClient);
+router.post('/delete-supplier', supplierController.postDeleteSupplier);
 
 module.exports = router;

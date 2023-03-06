@@ -106,3 +106,16 @@ exports.postEditSupplier = (req, res, next) => {
             console.log(err);
         });
 };
+
+exports.postDeleteSupplier = (req, res, next) => {
+    const supId = req.body.supplierId;
+    Supplier.findByPk(supId)
+        .then((supplier) => {
+          return supplier.destroy()
+        })
+        .then(result => {
+          console.log('SUPPLIER REMOVED !!!');
+          res.redirect('/admin/suppliers');
+        })
+        .catch(err => console.log(err));
+};
