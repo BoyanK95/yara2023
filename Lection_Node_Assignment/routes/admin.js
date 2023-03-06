@@ -34,5 +34,6 @@ router.post('/edit-supplier', supplierController.postEditSupplier);
 
 //Deleting products
 router.post('/delete-product', adminController.postDeleteProduct);
+router.post('/delete-client', clientController.postDeleteClient);
 
 module.exports = router;

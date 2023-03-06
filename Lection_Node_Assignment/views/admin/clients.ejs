@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="card__actions">
                                     <a href="/admin/edit-client/<%= product.client_id %>?edit=true" class="btn">Edit</a>
-                                    <form action="/admin/delete-product" method="POST">
+                                    <form action="/admin/delete-client" method="POST">
                                         <input type="hidden" value="<%= product.client_id %>" name="clientId">
                                         <button class="btn danger" type="submit">Delete</button>
                                     </form>
