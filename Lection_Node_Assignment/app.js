@@ -31,7 +31,19 @@ const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+/** Creating session with pg and express-session */
 app.use(session({secret: 'my-secret-code', resave: false, saveUninitialized: false, cookie: { maxAge: 600000 }}))
+
+/** WHY DOESNT THIS WORK ??? */
+// app.use(session({
+//     store: new (require('connect-pg-simple')(session))({
+//       // Insert connect-pg-simple options here
+//     }),
+//     secret: process.env.FOO_COOKIE_SECRET,
+//     resave: false,
+//     cookie: { maxAge: 10 * 60 * 1000 }, // 10 minutes
+//     // Insert express-session options here
+//   }));
 
 /** Middle-ware for passing user through requests*/
 app.use((req, res, next) => {
