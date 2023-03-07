@@ -70,7 +70,8 @@ exports.postEditProduct = (req, res, next) => {
             return product.save();
         })
         .then((result) => {
-            console.log('PRODUCT UPDATED!!!');
+            console.log('PRODUCT UPDATED !!!' + result);
+            res.json(result)
             res.redirect('/admin/products');
         })
         .catch((err) => {

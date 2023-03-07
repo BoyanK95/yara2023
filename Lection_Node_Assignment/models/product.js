@@ -30,6 +30,7 @@ const Product = sequelize.define('product',{
   description: DataTypes.TEXT,
   imageurl: DataTypes.STRING,
 })
+//{tableName: 'product', freezeTableName: true}
 
 module.exports = Product
 
