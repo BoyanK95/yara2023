@@ -3,12 +3,11 @@ import Post from './components/Post';
 
 function App() {
     return (
-        <main>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-        </main>
+        <>
+            <Post author="Boyan" body="React.js is fucking AWSOME!!"/>
+            <Post author="Stambeto" body="zob.bg is fucking AWSOME!!"/>
+            <Post author="Ivaylo" body="audi.com is fucking AWSOME!!" />
+        </>
     );
 }
 
