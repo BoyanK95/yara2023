@@ -15,13 +15,11 @@ function NewPost({ onCancel, onSubmit, onAddPost }) {
 
     function submitHandler(e) {
         e.preventDefault();
-
         const postData = {
             key: Math.floor(Math.random() * 1000),
             body: enteredBody,
             author: enteredAuthor
         };
-
         onAddPost(postData)
         onCancel()
     }
