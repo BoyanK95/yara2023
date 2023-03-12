@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classes from './NewPost.module.css';
 
-function NewPost({ onCancel, onSubmit }) {
+function NewPost({ onCancel, onSubmit, onAddPost }) {
     const [enteredBody, setEnteredBody] = useState('');
     const [enteredAuthor, setEnteredAuthor] = useState('');
 
@@ -17,10 +17,12 @@ function NewPost({ onCancel, onSubmit }) {
         e.preventDefault();
 
         const postData = {
+            key: Math.floor(Math.random() * 1000),
             body: enteredBody,
             author: enteredAuthor
         };
-        console.log(postData);
+
+        onAddPost(postData)
         onCancel()
     }
 
