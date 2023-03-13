@@ -1,23 +1,24 @@
+import classes from './Form.module.css'
 
 const Form = () => {
     
 
     return (
-        <form action='#'>
+        <form action='#' className={classes.form}>
             <h2>Create a Crop Calendar: Specify crop and varieties</h2>
             <div>
-                <div>
+                <div className={classes.container}>
                     <label htmlFor='region'>Region</label>
                     <input type='text' name='region' id='region-input' defaultValue='All' />
                 </div>
-                <div>
+                {/* <div className={classes.container}>
                     <label htmlFor='crop'>Crop</label>
                     <select name='crop'>
                         <option>Wheat</option>
                         <option>Corn</option>
                         <option>Potato</option>
                     </select>
-                </div>
+                </div> */}
             </div>
             <div>
                 <label htmlFor='calendar-name'>Calendar name</label>
@@ -36,6 +37,7 @@ const Form = () => {
                 </div>
             </div>
         </form>
+        
     );
 };
 

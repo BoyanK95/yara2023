@@ -1,0 +1,28 @@
+.form{
+    padding: 2rem;
+    /* text-align: left; */
+}
+
+.form h2 {
+    padding: 1rem;
+    color: rgb(6, 6, 74);
+    margin-bottom: 1rem;
+}
+
+.form p {
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+    color: rgb(104, 112, 136);
+    padding: 0.5rem;
+}
+
+.container {
+    margin-bottom: 3rem;
+}
+
+input {
+    border-radius: 7px;
+    border: none;
+    margin-left: 1em;
+    padding: 0.25rem 2rem;
+}
