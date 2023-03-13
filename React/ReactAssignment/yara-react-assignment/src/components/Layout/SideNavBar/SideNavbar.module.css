@@ -37,9 +37,9 @@
     font-weight: 800;
     color: #0a2c58;
     padding-bottom: 0.25rem;
-    border-bottom: 3px solid #0a2c58;
+    /* border-bottom: 3px solid #0a2c58; */
 }
 
 .sidebar p {
-    padding: 0.4rem;
+    padding: 0.2rem;
 }
