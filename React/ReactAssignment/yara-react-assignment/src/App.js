@@ -1,12 +1,16 @@
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
+import './App.css';
+import HomePage from './pages/HomePage';
 
 function App() {
     return (
         <Layout>
-            <div>
-            <h1>Test</h1>
-            </div>
+            <Switch>
+                <Route path='/' exact >
+                    <HomePage />
+                </Route>
+            </Switch>
         </Layout>
     );
 }
