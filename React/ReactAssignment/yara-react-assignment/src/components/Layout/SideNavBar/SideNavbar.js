@@ -3,7 +3,7 @@ import classes from './SideNavbar.module.css';
 
 const SideNavbar = () => {
     return (
-        <div className={classes.header}>
+        <div className={classes.sidebar}>
             <nav>
                 <ul>
                     <li>

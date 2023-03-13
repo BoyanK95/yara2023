@@ -1,12 +1,14 @@
-import LogoImg from "../../Logo/LogoImg";
+import LogoImg from '../../Logo/LogoImg';
+import classes from './TopHeader.module.css';
 
 const TopHeader = () => {
     return (
         <header>
-            <LogoImg />
-            <div></div>
+            <div className={classes.background}>
+                <LogoImg />
+            </div>
         </header>
     );
 };
 
-export default TopHeader
+export default TopHeader;

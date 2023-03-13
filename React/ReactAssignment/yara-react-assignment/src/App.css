@@ -1,10 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(45deg, rgb(202, 225, 239) 0%, rgb(139, 181, 233) 100%);
+  background: linear-gradient(46deg, rgb(255, 255, 255) 2%, rgb(122, 163, 213) 100%);
 }
 
 .centered {

@@ -1,15 +1,16 @@
 import { Fragment } from 'react';
 import SideNavbar from './SideNavBar/SideNavbar';
 import TopHeader from './TopHeader/TopHeader';
+import classes from './Layout.module.css'
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     return (
         <Fragment>
             <TopHeader />
             <SideNavbar />
-            <main>{children}</main>
+            <main className={classes.main}>{children}</main>
         </Fragment>
     );
 };
 
-export default Layout
+export default Layout;
