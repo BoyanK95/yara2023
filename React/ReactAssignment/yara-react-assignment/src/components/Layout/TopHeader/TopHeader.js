@@ -1,4 +1,4 @@
-import LogoImg from "../Logo/LogoImg";
+import LogoImg from "../../Logo/LogoImg";
 
 const TopHeader = () => {
     return (

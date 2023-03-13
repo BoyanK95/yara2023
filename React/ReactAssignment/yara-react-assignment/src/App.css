@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(216, 230, 239);
+  background: linear-gradient(45deg, rgb(202, 225, 239) 0%, rgb(139, 181, 233) 100%);
 }
 
 .centered {

@@ -3,8 +3,9 @@
     padding: 0;
     width: 100px;
     height: 100px;
+    color: black;
 }
 
 .background{
-    background-color: blue;
+    background: linear-gradient(45deg, rgb(98, 160, 202) 0%, rgb(54, 78, 175) 100%);
 }
