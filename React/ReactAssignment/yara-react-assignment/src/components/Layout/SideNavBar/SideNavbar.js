@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { FaTable, FaWpforms } from 'react-icons/fa';
 import classes from './SideNavbar.module.css';
 
 const SideNavbar = () => {
@@ -8,12 +9,18 @@ const SideNavbar = () => {
                 <ul>
                     <li>
                         <NavLink activeClassName={classes.active} to='/form'>
-                            Form
+                            <div>
+                                <FaWpforms />
+                                <p>From</p>
+                            </div>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink activeClassName={classes.active} to='/table'>
-                            Table
+                            <div>
+                                <FaTable />
+                                <p>Table</p>
+                            </div>
                         </NavLink>
                     </li>
                 </ul>

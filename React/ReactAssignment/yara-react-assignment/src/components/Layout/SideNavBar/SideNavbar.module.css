@@ -11,12 +11,7 @@
     background-image: linear-gradient( rgb(93, 157, 200), rgb(70, 95, 197))
 }
 
-.sidebar nav {
-    height: 100%;
-}
-
 .sidebar ul {
-    /* height: 100%; */
     list-style: none;
     display: block;
     padding: 0;
@@ -24,8 +19,8 @@
 }
 
 .sidebar li {
-    margin: 7.8rem 0rem;
-    padding: 2rem 0;
+    margin: 3.3rem 0rem;
+    padding: 2.13rem 0;
     margin-bottom: 10rem;
     text-align: center;
 }
@@ -45,28 +40,6 @@
     border-bottom: 3px solid #0a2c58;
 }
 
-/* .sideNavbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 130px;
-    height: 100vh;
-    box-sizing: border-box;
-    border-right: 0.5px solid rgb(182, 182, 182);
-    padding: 9px 0;
-    margin: 0;
-    background-color: linear-gradient(45deg, rgb(98, 160, 202) 0%, rgb(54, 78, 175) 100%);
-} */
-/* nav .nav-item {
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.sidebar p {
+    padding: 0.4rem;
 }
-.nav-item a {
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    color: black;
-} */
