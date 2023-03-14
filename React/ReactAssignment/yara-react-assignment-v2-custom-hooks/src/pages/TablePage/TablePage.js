@@ -4,18 +4,23 @@ import Table from '../../components/TableComponent/Table';
 import classes from './TablePage.module.css';
 
 const TablePage = () => {
-    const [showForm, setShowForm] = useState(false)
+    const [showForm, setShowForm] = useState(false);
 
     function addItemHandler() {
-        setShowForm(true)
+        setShowForm(true);
     }
-    
+
     return (
         <div className={classes.container}>
             <h3>Table Details</h3>
-            <Table />
-            <button className='btn' onClick={addItemHandler}>Add a new item</button>
-            {showForm && <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild'/>}
+            <details>
+            <summary>Show Table Details</summary>
+                <Table firstColumn='Region' secondColumn='Season' thirdColumn='Crops' numberColumn='Yeild in tons' />
+                <button className='btn' onClick={addItemHandler}>
+                    Add a new item
+                </button>
+            </details>
+            {showForm && <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild' />}
         </div>
     );
 };

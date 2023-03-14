@@ -1,16 +1,16 @@
 import classes from './Table.module.css'
 
-const Table = () => {
+const Table = ({firstColumn, secondColumn, thirdColumn, numberColumn}) => {
     // const tableData = ['Bulgaria' , 'Winter', 'Corn', 'Germany', 'Summer', 'Bean', 'Thailand', 'Rainy', 'Rice']
 
     return (
         <table className={classes.table}>
             <thead>
                 <tr>
-                    <th>Region</th>
-                    <th>Season</th>
-                    <th>Crops</th>
-                    <th>Yeild tons</th>
+                    <th>{firstColumn}</th>
+                    <th>{secondColumn}</th>
+                    <th>{thirdColumn}</th>
+                    <th>{numberColumn}</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,13 +57,6 @@ const Table = () => {
                     </td>
                 </tr>
             </tbody>
-            {/* <tfoot>
-                <tr>
-                    <td className='last-td-row'>Almonds Generic</td>
-                    <td className='last-td-row'>Yes</td>
-                    <td className='last-td-row'>No</td>
-                </tr>
-            </tfoot> */}
         </table>
     );
 };
