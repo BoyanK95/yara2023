@@ -1,6 +1,9 @@
+import {FaQuestion} from 'react-icons/fa'
+import classes from './Table.module.css'
+
 const Table = () => {
     return (
-        <table>
+        <table className={classes.table}>
             <thead>
                 <tr>
                     <th>Crop</th>
@@ -11,7 +14,7 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {/* <tr>
                     <td>
                         <a href='#'>Search</a>
                     </td>
@@ -23,17 +26,17 @@ const Table = () => {
                     </td>
                     <td></td>
                     <td></td>
-                </tr>
+                </tr> */}
             </tbody>
             <tfoot>
                 <tr>
-                    <td class='last-td-row'>Almonds Generic</td>
-                    <td class='last-td-row'>Yes</td>
-                    <td class='last-td-row'>No</td>
-                    <td class='last-td-row'>
-                        <img src='./assets/questionmark.png' alt='questionmark' />
+                    <td className='last-td-row'>Almonds Generic</td>
+                    <td className='last-td-row'>Yes</td>
+                    <td className='last-td-row'>No</td>
+                    <td className='last-td-row'>
+                        <FaQuestion />
                     </td>
-                    <td class='last-td-row' id='actions-td'>
+                    <td className='last-td-row' id='actions-td'>
                         ...
                     </td>
                 </tr>

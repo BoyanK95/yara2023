@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './pages/HomePage/HomePage';
 import NotFound from './pages/NotFoundPage/NotFound';
 import FormPage from './pages/FormPage/FormPage';
+import TablePage from './pages/TablePage/TablePage';
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
                     <FormPage />
                 </Route>
                 <Route path='/table'>
-                    <h1>TEST Table</h1>
+                    <TablePage />
                 </Route>
                 <Route path='*'>
                     <NotFound />
