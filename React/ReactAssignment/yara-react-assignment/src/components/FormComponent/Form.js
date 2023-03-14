@@ -5,7 +5,6 @@ const Form = () => {
 
     return (
         <form action='#' className={classes.form}>
-            <h2>Create a Crop Calendar: Specify crop and varieties</h2>
             <div>
                 <div className={classes.container}>
                     <label htmlFor='region'>Region</label>

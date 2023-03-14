@@ -2,8 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import './App.css';
 import HomePage from './pages/HomePage/HomePage';
-import Form from './components/FormComponent/Form';
 import NotFound from './pages/NotFoundPage/NotFound';
+import FormPage from './pages/FormPage/FormPage';
 
 function App() {
     return (
@@ -13,7 +13,7 @@ function App() {
                     <HomePage />
                 </Route>
                 <Route path='/form'>
-                    <Form />
+                    <FormPage />
                 </Route>
                 <Route path='/table'>
                     <h1>TEST Table</h1>
