@@ -1,0 +1,44 @@
+.form{
+    padding: 2rem;
+}
+
+.form h2 {
+    padding: 1rem;
+    color: rgb(6, 6, 74);
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin-bottom: 3rem;
+    /* padding: 0.3rem; */
+}
+
+input {
+    border-radius: 7px;
+    border: none;
+    margin-left: 1em;
+    padding: 0.25rem 2rem;
+}
+
+.btnContainer {
+    padding: 1rem;
+}
+
+.btnContainer button {
+    margin: 1rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.input {
+    border: 1px solid darkgray;
+}
+
+.error {
+    border: 1px solid red;
+    background-color: rgba(254, 172, 172, 0.597);
+}
+
+.errorText {
+    color: red;
+    font-size: 15px;
+}
