@@ -59,6 +59,12 @@ body {
   background-color: darkred;
   border: 2px darkred solid;
 }
+ #max-char {
+  font-size: 13px;
+  margin-bottom: 1.5rem;
+  color: rgb(104, 112, 136);
+  padding: 0.5rem;
+}
 
 /* .btn--flat {
   cursor: pointer;
