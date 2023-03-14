@@ -3,18 +3,25 @@ import classes from './Form.module.css'
 
 const Form = () => {
     const [regionInput, setRegionInput] = useState('')
+    const [calendarName, setCalendarName] = useState('')
     
     function regionInputHandler(e) {
         setRegionInput(e.target.value)
     }
 
+    function calendarNameHandler(e) {
+        setCalendarName(e.target.value)
+    }
+
     function formSubmitHandler(e) {
         e.preventDefault()
         console.log(regionInput);
+        console.log(calendarName);
     }
 
     function resetHandler() {
         setRegionInput('')
+        setCalendarName('')
     }
 
     return (
@@ -27,7 +34,7 @@ const Form = () => {
             </div>
             <div>
                 <label htmlFor='calendar-name'>Calendar name</label>
-                <input type='text' name='calendar-name' />
+                <input type='text' name='calendarName' onChange={calendarNameHandler} value={calendarName} />
                 <p id='max-char'>
                     Optional description but not including cultivation type, region & varieties. (50 characters)
                 </p>
