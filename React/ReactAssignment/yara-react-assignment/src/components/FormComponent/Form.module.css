@@ -25,3 +25,12 @@ input {
     margin-left: 1em;
     padding: 0.25rem 2rem;
 }
+
+.btnContainer {
+    padding: 1rem;
+}
+
+.btnContainer button {
+    margin: 1rem;
+    padding: 0.5rem 1.5rem;
+}

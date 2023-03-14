@@ -36,10 +36,28 @@ body {
   margin: 1rem 0.5rem;
 }
 
+.btnCancel {
+  border: 2px red solid;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: red;
+  color: #fff;
+  border-radius: 7px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  margin: 1rem 0.5rem;
+}
+
 .btn:hover,
 .btn:active {
   background-color: #1936b7;
   border-color: #1116ac;
+}
+
+.btnCancel:hover,
+.btnCancel:active {
+  background-color: darkred;
+  border: 2px darkred solid;
 }
 
 /* .btn--flat {
