@@ -30,7 +30,7 @@ const Form = () => {
                 <label htmlFor='variety'>Please specify the crop variety:</label>
                 <input type='text' name='variety' />
                 <div>
-                    <button className='btn'>
+                    <button className='btn' button='submit'>
                         Submit
                     </button>
                 </div>
