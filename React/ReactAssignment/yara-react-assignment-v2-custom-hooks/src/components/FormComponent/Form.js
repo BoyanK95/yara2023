@@ -1,11 +1,12 @@
 import useInput from '../../hooks/use-input';
 import classes from './Form.module.css';
 
-const isNotEmpty = (value) => value.trim() !== ''
+const isNotEmpty = (value) => value.trim() !== '';
 
 const Form = () => {
     const {
         value: regionInput,
+        isValid: regionsIsValid,
         hasError: regionHasError,
         valueChangeHandler: regionInputHandler,
         inputBlurHandler: regionBlurHandler,
@@ -14,6 +15,7 @@ const Form = () => {
 
     const {
         value: calendarName,
+        isValid: calendarIsValid,
         hasError: calendarHasError,
         valueChangeHandler: calendarNameHandler,
         inputBlurHandler: calendarBlurHandler,
@@ -22,20 +24,39 @@ const Form = () => {
 
     const {
         value: varietyInput,
+        isValid: varietyIsValid,
         hasError: varietyHasError,
         valueChangeHandler: varietyInputHandler,
         inputBlurHandler: varietyBlurHandler,
         reset: resetVariety
     } = useInput(isNotEmpty);
 
+    let formIsValid = false;
+    console.log(formIsValid);
+
+    if (regionsIsValid && calendarIsValid && varietyIsValid) {
+        formIsValid = true
+    }
+
     function formSubmitHandler(e) {
         e.preventDefault();
+        console.log(formIsValid);
+        debugger
+        if (!formIsValid) {
+            return
+        }
+        console.log('SIBMITED');
+        console.log(regionInput);
+        console.log(calendarName);
+        console.log(varietyInput);
+
+        resetHandler()
     }
 
     function resetHandler() {
-        resetRegion()
-        resetCalendar()
-        resetVariety()
+        resetRegion();
+        resetCalendar();
+        resetVariety();
     }
 
     const regionInputClass = !regionHasError ? classes.input : classes.error;
@@ -90,7 +111,7 @@ const Form = () => {
                 <button className='btnCancel' type='button' onClick={resetHandler}>
                     Cancel
                 </button>
-                <button className='btn'>Save</button>
+                <button className='btn' disabled={!formIsValid}>Save</button>
             </div>
         </form>
     );

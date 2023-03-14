@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-function useInput(params) {
+function useInput(validateValue) {
     const [enteredValue, setEnteredValue] = useState('');
     const [isTouched, setIsTouched] = useState(false);
 
-    const hasError = isTouched && !enteredValue;
+    const valueIsValid = validateValue(enteredValue)
+    const hasError = isTouched && !valueIsValid;
 
     function valueChangeHandler(e) {
         setEnteredValue(e.target.value);
@@ -21,6 +22,7 @@ function useInput(params) {
 
     return {
         value: enteredValue,
+        isValid: valueIsValid,
         hasError,
         valueChangeHandler,
         inputBlurHandler,
