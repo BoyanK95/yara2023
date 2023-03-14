@@ -1,5 +1,6 @@
 .form{
     padding: 2rem;
+    text-align: center;
 }
 
 .form h2 {
@@ -9,7 +10,7 @@
 }
 
 .container {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     /* padding: 0.3rem; */
 }
 
@@ -21,11 +22,11 @@ input {
 }
 
 .btnContainer {
-    padding: 1rem;
+    padding: 0rem;
 }
 
 .btnContainer button {
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: 0.5rem 1.5rem;
 }
 

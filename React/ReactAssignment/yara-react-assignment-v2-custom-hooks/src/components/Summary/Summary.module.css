@@ -1,0 +1,15 @@
+.details {
+    border: 2px dotted darkblue;
+    width: 90%;
+}
+
+.details h3 {
+    padding: 1rem;
+}
+
+.details li {
+    list-style: none;
+    font-weight: 600;
+    color: rgb(34, 34, 119);
+    padding: 0.2rem;
+}
