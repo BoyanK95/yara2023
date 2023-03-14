@@ -4,24 +4,29 @@ import classes from './Form.module.css'
 const Form = () => {
     const [regionInput, setRegionInput] = useState('')
     const [calendarName, setCalendarName] = useState('')
+    const [varietyInput, setVarietyInput] = useState('')
     
     function regionInputHandler(e) {
         setRegionInput(e.target.value)
     }
-
     function calendarNameHandler(e) {
         setCalendarName(e.target.value)
+    }
+    function varietyInpytHandler(e) {
+        setVarietyInput(e.target.value)
     }
 
     function formSubmitHandler(e) {
         e.preventDefault()
         console.log(regionInput);
         console.log(calendarName);
+        console.log(varietyInput);
     }
 
     function resetHandler() {
         setRegionInput('')
         setCalendarName('')
+        setVarietyInput('')
     }
 
     return (
@@ -41,9 +46,9 @@ const Form = () => {
             </div>
             <div>
                 <label htmlFor='variety'>Please specify the crop variety:</label>
-                <input type='text' name='variety' />
+                <input type='text' name='variety' onChange={varietyInpytHandler} value={varietyInput}/>
                 <div className={classes.btnContainer}>
-                <button className='btnCancel' type='button' onClick={resetHandler}>
+                <button className='btnCancel' type='button' onClick={resetHandler} >
                         Cancel
                     </button>
                     <button className='btn'>
