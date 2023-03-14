@@ -1,50 +1,41 @@
-import { useState } from 'react';
+import useInput from '../../hooks/use-input';
 import classes from './Form.module.css';
 
-const Form = () => {
-    const [regionInput, setRegionInput] = useState('');
-    const [regionHasError, setRegionInputError] = useState(false);
-    const [calendarName, setCalendarName] = useState('');
-    const [calendarHasError, setCalendarError] = useState(false);
-    const [varietyInput, setVarietyInput] = useState('');
-    const [varietyHasError, setVarietyError] = useState(false);
+const isNotEmpty = (value) => value.trim() !== ''
 
-    function regionInputHandler(e) {
-        setRegionInput(e.target.value);
-    }
-    function calendarNameHandler(e) {
-        setCalendarName(e.target.value);
-    }
-    function varietyInpytHandler(e) {
-        setVarietyInput(e.target.value);
-    }
+const Form = () => {
+    const {
+        value: regionInput,
+        hasError: regionHasError,
+        valueChangeHandler: regionInputHandler,
+        inputBlurHandler: regionBlurHandler,
+        reset: resetRegion
+    } = useInput(isNotEmpty);
+
+    const {
+        value: calendarName,
+        hasError: calendarHasError,
+        valueChangeHandler: calendarNameHandler,
+        inputBlurHandler: calendarBlurHandler,
+        reset: resetCalendar
+    } = useInput(isNotEmpty);
+
+    const {
+        value: varietyInput,
+        hasError: varietyHasError,
+        valueChangeHandler: varietyInputHandler,
+        inputBlurHandler: varietyBlurHandler,
+        reset: resetVariety
+    } = useInput(isNotEmpty);
 
     function formSubmitHandler(e) {
         e.preventDefault();
-        if (!regionInput) {
-            setRegionInputError(true);
-            return;
-        }
-        if (!calendarName) {
-            setCalendarError(true);
-            return;
-        }
-        if (!varietyInput) {
-            setVarietyError(true);
-            return;
-        }
-        console.log(regionInput);
-        console.log(calendarName);
-        console.log(varietyInput);
-        setRegionInputError(false);
-        setCalendarError(false);
-        setVarietyInput(false);
     }
 
     function resetHandler() {
-        setRegionInput('');
-        setCalendarName('');
-        setVarietyInput('');
+        resetRegion()
+        resetCalendar()
+        resetVariety()
     }
 
     const regionInputClass = !regionHasError ? classes.input : classes.error;
@@ -61,6 +52,7 @@ const Form = () => {
                         type='text'
                         name='region'
                         id='region-input'
+                        onBlur={regionBlurHandler}
                         onChange={regionInputHandler}
                         value={regionInput}
                     />
@@ -73,6 +65,7 @@ const Form = () => {
                     className={calendarInputClass}
                     type='text'
                     name='calendarName'
+                    onBlur={calendarBlurHandler}
                     onChange={calendarNameHandler}
                     value={calendarName}
                 />
@@ -83,7 +76,14 @@ const Form = () => {
             </div>
             <div className={classes.container}>
                 <label htmlFor='variety'>Please specify the crop variety:</label>
-                <input className={varietyInputClass} type='text' name='variety' onChange={varietyInpytHandler} value={varietyInput} />
+                <input
+                    className={varietyInputClass}
+                    type='text'
+                    name='variety'
+                    onBlur={varietyBlurHandler}
+                    onChange={varietyInputHandler}
+                    value={varietyInput}
+                />
                 {varietyHasError && <p className={classes.errorText}>Input is empty</p>}
             </div>
             <div className={classes.btnContainer}>
