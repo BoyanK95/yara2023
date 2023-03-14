@@ -91,7 +91,7 @@ const Form = (props) => {
                             onChange={regionInputHandler}
                             value={regionInput}
                         />
-                        {regionHasError && <p className={classes.errorText}>Input is empty</p>}
+                        {regionHasError && <p className={classes.errorText}>Value of {props.firstLabel} is required!</p>}
                     </div>
                 </div>
                 <div className={classes.container}>
@@ -104,7 +104,7 @@ const Form = (props) => {
                         onChange={calendarNameHandler}
                         value={calendarName}
                     />
-                    {calendarHasError && <p className={classes.errorText}>Input is empty</p>}
+                    {calendarHasError && <p className={classes.errorText}>Value of {props.secondLabel} is required!</p>}
                     <p id='max-char'>
                         Optional description but not including cultivation type, region & varieties. (50 characters)
                     </p>
@@ -119,7 +119,7 @@ const Form = (props) => {
                         onChange={varietyInputHandler}
                         value={varietyInput}
                     />
-                    {varietyHasError && <p className={classes.errorText}>Input is empty</p>}
+                    {varietyHasError && <p className={classes.errorText}>Value of {props.thirdLabel} is required!</p>}
                 </div>
                 <div className={classes.btnContainer}>
                     <button className='btnCancel' type='button' onClick={resetHandler}>

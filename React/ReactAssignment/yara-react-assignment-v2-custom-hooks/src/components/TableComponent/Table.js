@@ -1,46 +1,48 @@
-import {FaQuestion} from 'react-icons/fa'
 import classes from './Table.module.css'
 
 const Table = () => {
+    // const tableData = ['Bulgaria' , 'Winter', 'Corn', 'Germany', 'Summer', 'Bean', 'Thailand', 'Rainy', 'Rice']
+
     return (
         <table className={classes.table}>
             <thead>
                 <tr>
-                    <th>Crop</th>
-                    <th>Pre-crop</th>
-                    <th>Post-crop</th>
-                    <th>Last mod.</th>
-                    <th>Actions</th>
+                    <th>Region</th>
+                    <th>Season</th>
+                    <th>Crops</th>
                 </tr>
             </thead>
             <tbody>
-                {/* <tr>
+                <tr>
                     <td>
-                        <a href='#'>Search</a>
+                        Bulgaria
                     </td>
                     <td>
-                        <a href='#'>Search</a>
+                        Summer
                     </td>
                     <td>
-                        <a href='#'>Search</a>
+                        Sunflower
                     </td>
-                    <td></td>
-                    <td></td>
-                </tr> */}
+                </tr>
+                <tr>
+                    <td>
+                        Germany
+                    </td>
+                    <td>
+                        Winter
+                    </td>
+                    <td>
+                        Potato
+                    </td>
+                </tr>
             </tbody>
-            <tfoot>
+            {/* <tfoot>
                 <tr>
                     <td className='last-td-row'>Almonds Generic</td>
                     <td className='last-td-row'>Yes</td>
                     <td className='last-td-row'>No</td>
-                    <td className='last-td-row'>
-                        <FaQuestion />
-                    </td>
-                    <td className='last-td-row' id='actions-td'>
-                        ...
-                    </td>
                 </tr>
-            </tfoot>
+            </tfoot> */}
         </table>
     );
 };
