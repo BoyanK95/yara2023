@@ -6,7 +6,7 @@ const FormPage = () => {
     return (
         <div className={classes.container}>
             <h2>Create a Crop Calendar: Specify crop and varieties</h2>
-            <Form firstLabel='Region' secondLabel='Calendar name' thirdLabel='Please specify the crop variety'/>
+            <Form firstLabel='Region' secondLabel='Calendar name' thirdLabel='Crop variety' numberLabel='Farmland sq. m'/>
         </div>
     );
 };

@@ -36,10 +36,19 @@ const Form = (props) => {
         reset: resetVariety
     } = useInput(isNotEmpty);
 
+    const {
+        value: numberInput,
+        isValid: numberInputIsValid,
+        hasError: numberInputHasError,
+        valueChangeHandler: numberInputHandler,
+        inputBlurHandler: numberBlurHandler,
+        reset: resetNumberInput
+    } = useInput(isNotEmpty);
+
     let formIsValid = false;
     // console.log(formIsValid);
 
-    if (regionsIsValid && calendarIsValid && varietyIsValid) {
+    if (regionsIsValid && calendarIsValid && varietyIsValid && numberInputIsValid) {
         formIsValid = true;
     }
 
@@ -58,10 +67,11 @@ const Form = (props) => {
         dataArr.push(regionInput)
         dataArr.push(calendarName)
         dataArr.push(varietyInput)
+        dataArr.push(numberInput)
         console.log(dataArr);
+
         setSubmitedData(dataArr)
         setShowSummary(true)
-        
 
         resetHandler();
     }
@@ -70,11 +80,13 @@ const Form = (props) => {
         resetRegion();
         resetCalendar();
         resetVariety();
+        resetNumberInput()
     }
 
     const regionInputClass = !regionHasError ? classes.input : classes.error;
     const calendarInputClass = !calendarHasError ? classes.input : classes.error;
     const varietyInputClass = !varietyHasError ? classes.input : classes.error;
+    const numberInputClass = !numberInputHasError ? classes.input : classes.error;
 
     return (
         <>
@@ -120,6 +132,18 @@ const Form = (props) => {
                         value={varietyInput}
                     />
                     {varietyHasError && <p className={classes.errorText}>Value of {props.thirdLabel} is required!</p>}
+                </div>
+                <div className={classes.container}>
+                    <label htmlFor={props.numberLabel}>{props.numberLabel}</label>
+                    <input
+                        className={numberInputClass}
+                        type='number'
+                        name='numberInput'
+                        onBlur={numberBlurHandler}
+                        onChange={numberInputHandler}
+                        value={numberInput}
+                    />
+                    {numberInputHasError && <p className={classes.errorText}>Value of {props.numberLabel} is required!</p>}
                 </div>
                 <div className={classes.btnContainer}>
                     <button className='btnCancel' type='button' onClick={resetHandler}>

@@ -15,7 +15,7 @@ const TablePage = () => {
             <h3>Table Details</h3>
             <Table />
             <button className='btn' onClick={addItemHandler}>Add a new item</button>
-            {showForm && <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops'/>}
+            {showForm && <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild'/>}
         </div>
     );
 };

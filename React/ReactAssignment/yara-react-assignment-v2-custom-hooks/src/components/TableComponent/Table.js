@@ -10,6 +10,7 @@ const Table = () => {
                     <th>Region</th>
                     <th>Season</th>
                     <th>Crops</th>
+                    <th>Yeild tons</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,9 @@ const Table = () => {
                     <td>
                         Sunflower
                     </td>
+                    <td>
+                        35
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -33,6 +37,23 @@ const Table = () => {
                     </td>
                     <td>
                         Potato
+                    </td>
+                    <td>
+                        3
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Thailand
+                    </td>
+                    <td>
+                        Rainy
+                    </td>
+                    <td>
+                        Rice
+                    </td>
+                    <td>
+                        177
                     </td>
                 </tr>
             </tbody>
