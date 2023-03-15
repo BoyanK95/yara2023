@@ -1,7 +1,11 @@
-import classes from './Table.module.css'
+import classes from './Table.module.css';
 
-const Table = ({firstColumn, secondColumn, thirdColumn, numberColumn}) => {
-    // const tableData = ['Bulgaria' , 'Winter', 'Corn', 'Germany', 'Summer', 'Bean', 'Thailand', 'Rainy', 'Rice']
+const Table = ({ firstColumn, secondColumn, thirdColumn, numberColumn }) => {
+    const tableData = [
+        { firstTd: 'Bulgaria', secondTd: 'Winter', thirdTd: 'Corn', numberTd: '7' },
+        { firstTd: 'Germany', secondTd: 'Summer', thirdTd: 'Bean', numberTd: '7' },
+        { firstTd: 'Thailand', secondTd: 'Rainy', thirdTd: 'Rice', numberTd: '7' }
+    ];
 
     return (
         <table className={classes.table}>
@@ -14,47 +18,19 @@ const Table = ({firstColumn, secondColumn, thirdColumn, numberColumn}) => {
                 </tr>
             </thead>
             <tbody>
+                {tableData.map((td) => (
+                    <tr>
+                        <td>{td.firstTd}</td>
+                        <td>{td.secondTd}</td>
+                        <td>{td.thirdTd}</td>
+                        <td>{td.numberTd}</td>
+                    </tr>
+                ))}
                 <tr>
-                    <td>
-                        Bulgaria
-                    </td>
-                    <td>
-                        Summer
-                    </td>
-                    <td>
-                        Sunflower
-                    </td>
-                    <td>
-                        35
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Germany
-                    </td>
-                    <td>
-                        Winter
-                    </td>
-                    <td>
-                        Potato
-                    </td>
-                    <td>
-                        3
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Thailand
-                    </td>
-                    <td>
-                        Rainy
-                    </td>
-                    <td>
-                        Rice
-                    </td>
-                    <td>
-                        177
-                    </td>
+                    <td>Bulgaria</td>
+                    <td>Summer</td>
+                    <td>Sunflower</td>
+                    <td>35</td>
                 </tr>
             </tbody>
         </table>
