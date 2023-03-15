@@ -149,7 +149,7 @@ const Form = (props) => {
                     <button className='btnCancel' type='button' onClick={resetHandler}>
                         Cancel
                     </button>
-                    <button className='btn' disabled={!formIsValid}>
+                    <button className='btn' disabled={!formIsValid} onClick>
                         Save
                     </button>
                 </div>

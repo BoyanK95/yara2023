@@ -1,11 +1,8 @@
 import classes from './Table.module.css';
+import { tableData } from '../../data/tableData';
 
 const Table = ({ firstColumn, secondColumn, thirdColumn, numberColumn }) => {
-    const tableData = [
-        { firstTd: 'Bulgaria', secondTd: 'Winter', thirdTd: 'Corn', numberTd: '7' },
-        { firstTd: 'Germany', secondTd: 'Summer', thirdTd: 'Bean', numberTd: '7' },
-        { firstTd: 'Thailand', secondTd: 'Rainy', thirdTd: 'Rice', numberTd: '7' }
-    ];
+    
 
     return (
         <table className={classes.table}>
@@ -19,19 +16,13 @@ const Table = ({ firstColumn, secondColumn, thirdColumn, numberColumn }) => {
             </thead>
             <tbody>
                 {tableData.map((td) => (
-                    <tr>
+                    <tr key={td.id}>
                         <td>{td.firstTd}</td>
                         <td>{td.secondTd}</td>
                         <td>{td.thirdTd}</td>
                         <td>{td.numberTd}</td>
                     </tr>
                 ))}
-                <tr>
-                    <td>Bulgaria</td>
-                    <td>Summer</td>
-                    <td>Sunflower</td>
-                    <td>35</td>
-                </tr>
             </tbody>
         </table>
     );
