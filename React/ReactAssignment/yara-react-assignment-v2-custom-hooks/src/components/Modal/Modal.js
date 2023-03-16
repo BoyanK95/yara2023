@@ -21,7 +21,7 @@ const ModalOverlay = (props) => {
 function Modal({ children, onClose }) {
     return (
         <Fragment>
-            {ReactDOM.createPortal(<Backdrop onClick={onClose} />, backdropRootEl)}
+            {ReactDOM.createPortal(<Backdrop onClose={onClose} />, backdropRootEl)}
             {ReactDOM.createPortal(
                 <ModalOverlay>
                     <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild' />
