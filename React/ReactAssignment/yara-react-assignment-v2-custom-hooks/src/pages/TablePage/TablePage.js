@@ -22,7 +22,7 @@ const TablePage = () => {
                 </button>
             </details>
             {showForm && (
-                <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild' onSubmit  />
+                <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild'  />
             )}
         </div>
     );
