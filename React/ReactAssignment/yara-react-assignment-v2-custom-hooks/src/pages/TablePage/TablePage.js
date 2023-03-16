@@ -3,12 +3,17 @@ import Form from '../../components/FormComponent/Form';
 import Table from '../../components/TableComponent/Table';
 import classes from './TablePage.module.css';
 import { tableData } from '../../data/tableData';
+import Modal from '../../components/Modal/Modal';
 
 const TablePage = () => {
-    const [showForm, setShowForm] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
-    function addItemHandler() {
-        setShowForm(true);
+    function modalToggleHandler() {
+        if (showModal) {
+            setShowModal(false)
+        } else {
+            setShowModal(true)
+        }
     }
 
     return (
@@ -17,12 +22,12 @@ const TablePage = () => {
             <details>
                 <summary>Show Table Details</summary>
                 <Table firstColumn='Region' secondColumn='Season' thirdColumn='Crops' numberColumn='Yeild in tons' />
-                <button className='btn' onClick={addItemHandler}>
+                <button className='btn' onClick={modalToggleHandler}>
                     Add a new item
                 </button>
             </details>
-            {showForm && (
-                <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild'  />
+            {showModal && (
+                <Modal onClose={modalToggleHandler}/>
             )}
         </div>
     );
