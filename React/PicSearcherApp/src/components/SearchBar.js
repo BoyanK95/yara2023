@@ -1,12 +1,22 @@
-function SearchBar({ onSubmit }) {
+import { useState } from "react";
 
-  const handleClick = () => {
-    onSubmit('sharks')
+function SearchBar({onSubmit}) {
+  const [term, setTerm] = useState('')
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    onSubmit(term)
   }
+
+  function inputChangeHandler(e) {
+    setTerm(e.target.value)
+  }
+
     return (
         <div>
-            <input />
-            <button onClick={handleClick}>Click me</button>
+          <form onSubmit={handleFormSubmit}>
+            <input value={term} onChange={inputChangeHandler}/>
+          </form>
         </div>
     );
 }
