@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { createContext } from 'react';
 import useInput from '../../hooks/use-input';
-import SummaryComponent from '../Summary/Summary';
 import classes from './Form.module.css';
 
 const isNotEmpty = (value) => value.trim() !== '';
+const dataArr = []
 
 const Form = (props) => {
-    const [submitedData, setSubmitedData] = useState([])
-    const [showSummary, setShowSummary] = useState(false)
+    const ctx = createContext(dataArr)
+    console.log(ctx);
 
     const {
         value: regionInput,
@@ -63,15 +63,16 @@ const Form = (props) => {
         console.log(calendarName);
         console.log(varietyInput);
 
-        const dataArr = []
+        
         dataArr.push(regionInput)
         dataArr.push(calendarName)
         dataArr.push(varietyInput)
         dataArr.push(numberInput)
         console.log(dataArr);
+        console.log(`ctx; ${ctx}`);
 
-        setSubmitedData(dataArr)
-        setShowSummary(true)
+        // setSubmitedData(dataArr)
+        // setShowSummary(true)
 
         resetHandler();
     }
@@ -154,7 +155,6 @@ const Form = (props) => {
                     </button>
                 </div>
             </form>
-            {submitedData && showSummary && <SummaryComponent inputs={submitedData}/>}
         </>
     );
 };
