@@ -3,11 +3,9 @@ import useInput from '../../hooks/use-input';
 import classes from './Form.module.css';
 
 const isNotEmpty = (value) => value.trim() !== '';
-const dataArr = []
+const dataArr = [];
 
 const Form = (props) => {
-    
-
     const {
         value: regionInput,
         isValid: regionsIsValid,
@@ -62,16 +60,20 @@ const Form = (props) => {
         // console.log(calendarName);
         // console.log(varietyInput);
 
+        dataArr.push(regionInput);
+        dataArr.push(calendarName);
+        dataArr.push(varietyInput);
+        dataArr.push(numberInput);
+       
+        const id = Math.floor(Math.random() * 100000);
+        props.onSubmit({
+            id: id,
+            firstTd: regionInput,
+            secondTd: calendarName,
+            thirdTd: varietyInput,
+            numberTd: numberInput
+        });
         
-        dataArr.push(regionInput)
-        dataArr.push(calendarName)
-        dataArr.push(varietyInput)
-        dataArr.push(numberInput)
-        // console.log(dataArr);
-        //Adding object DATA to pass to TablePage to fix onSubmit props.onSubmit
-        props.onSubmit(dataArr)
-        // setSubmitedData(dataArr)
-        // setShowSummary(true)
 
         resetHandler();
     }
@@ -80,7 +82,7 @@ const Form = (props) => {
         resetRegion();
         resetCalendar();
         resetVariety();
-        resetNumberInput()
+        resetNumberInput();
     }
 
     const regionInputClass = !regionHasError ? classes.input : classes.error;
@@ -103,7 +105,9 @@ const Form = (props) => {
                             onChange={regionInputHandler}
                             value={regionInput}
                         />
-                        {regionHasError && <p className={classes.errorText}>Value of {props.firstLabel} is required!</p>}
+                        {regionHasError && (
+                            <p className={classes.errorText}>Value of {props.firstLabel} is required!</p>
+                        )}
                     </div>
                 </div>
                 <div className={classes.container}>
@@ -143,7 +147,9 @@ const Form = (props) => {
                         onChange={numberInputHandler}
                         value={numberInput}
                     />
-                    {numberInputHasError && <p className={classes.errorText}>Value of {props.numberLabel} is required!</p>}
+                    {numberInputHasError && (
+                        <p className={classes.errorText}>Value of {props.numberLabel} is required!</p>
+                    )}
                 </div>
                 <div className={classes.btnContainer}>
                     <button className='btnCancel' type='button' onClick={resetHandler}>

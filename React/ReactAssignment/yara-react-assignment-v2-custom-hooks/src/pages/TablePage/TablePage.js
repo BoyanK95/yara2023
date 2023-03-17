@@ -18,12 +18,12 @@ const TablePage = () => {
     }
 
     function handleSubmit(dataArr) {
-        const id = Math.floor(Math.random() * 100000)
-        
         debugger
-        const objData = {id: id, firstTd: dataArr[0], secondTd: dataArr[1], thirdTd: dataArr[2], numberTd: dataArr[3]}
-        setData((prevData) => [...prevData, objData])
-        console.log(dataArr);
+        // const id = Math.floor(Math.random() * 100000)
+        // const objData = {id: id, firstTd: dataArr[0], secondTd: dataArr[1], thirdTd: dataArr[2], numberTd: dataArr[3]}
+        setData((prevData) => [...prevData, dataArr])
+        // console.log(`data - ${data}`);
+        console.table(data);
         setShowModal(false)
     }
     
