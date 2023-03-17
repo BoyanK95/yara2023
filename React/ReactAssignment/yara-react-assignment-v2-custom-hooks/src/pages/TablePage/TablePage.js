@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Form from '../../components/FormComponent/Form';
 import Table from '../../components/TableComponent/Table';
 import classes from './TablePage.module.css';
 import { tableData } from '../../data/tableData';
@@ -18,12 +17,7 @@ const TablePage = () => {
     }
 
     function handleSubmit(dataArr) {
-        debugger
-        // const id = Math.floor(Math.random() * 100000)
-        // const objData = {id: id, firstTd: dataArr[0], secondTd: dataArr[1], thirdTd: dataArr[2], numberTd: dataArr[3]}
         setData((prevData) => [...prevData, dataArr])
-        // console.log(`data - ${data}`);
-        console.table(data);
         setShowModal(false)
     }
     

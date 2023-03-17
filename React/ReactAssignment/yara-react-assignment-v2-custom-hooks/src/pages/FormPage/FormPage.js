@@ -7,20 +7,26 @@ const FormPage = () => {
     const [submitedData, setSubmitedData] = useState([]);
     const [showSummary, setShowSummary] = useState(false);
 
-    function showSummaryHandler() {
+    function formSubmitHandler(formData) {
         setShowSummary(true);
+        // const data = []
+        // data.push(formData)
+        // console.log(formData);
+        setSubmitedData(formData)
+        // console.log(submitedData);
+        // setSubmitedData(data);
     }
 
     return (
         <div className={classes.container}>
             <h2>Create a Crop Calendar: Specify crop and varieties</h2>
-            
+
             <Form
                 firstLabel='Region'
                 secondLabel='Calendar name'
                 thirdLabel='Crop variety'
                 numberLabel='Farmland sq. m'
-                onSubmit={showSummaryHandler}
+                onSubmit={formSubmitHandler}
             />
             {submitedData && showSummary && <SummaryComponent inputs={submitedData} />}
         </div>
