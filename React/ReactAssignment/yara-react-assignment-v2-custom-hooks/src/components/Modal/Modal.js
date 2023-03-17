@@ -18,13 +18,13 @@ const ModalOverlay = (props) => {
     );
 };
 
-function Modal({ children, onClose }) {
+function Modal({ onClose, onSubmit }) {
     return (
         <Fragment>
             {ReactDOM.createPortal(<Backdrop onClose={onClose} />, backdropRootEl)}
             {ReactDOM.createPortal(
                 <ModalOverlay>
-                    <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild' />
+                    <Form firstLabel='Region' secondLabel='Season' thirdLabel='Crops' numberLabel='Yeild' onSubmit={onSubmit} />
                 </ModalOverlay>,
                 modalRootEl
             )}

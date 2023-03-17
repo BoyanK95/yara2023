@@ -6,8 +6,7 @@ const isNotEmpty = (value) => value.trim() !== '';
 const dataArr = []
 
 const Form = (props) => {
-    const ctx = createContext(dataArr)
-    console.log(ctx);
+    
 
     const {
         value: regionInput,
@@ -59,18 +58,18 @@ const Form = (props) => {
             return;
         }
         console.log('SIBMITED');
-        console.log(regionInput);
-        console.log(calendarName);
-        console.log(varietyInput);
+        // console.log(regionInput);
+        // console.log(calendarName);
+        // console.log(varietyInput);
 
         
         dataArr.push(regionInput)
         dataArr.push(calendarName)
         dataArr.push(varietyInput)
         dataArr.push(numberInput)
-        console.log(dataArr);
-        console.log(`ctx; ${ctx}`);
-
+        // console.log(dataArr);
+        //Adding object DATA to pass to TablePage to fix onSubmit props.onSubmit
+        props.onSubmit(dataArr)
         // setSubmitedData(dataArr)
         // setShowSummary(true)
 

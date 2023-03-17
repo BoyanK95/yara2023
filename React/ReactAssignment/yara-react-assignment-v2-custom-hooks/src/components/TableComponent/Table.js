@@ -1,8 +1,8 @@
 import classes from './Table.module.css';
-import { tableData } from '../../data/tableData';
+// import { tableData } from '../../data/tableData';
 
-const Table = ({ firstColumn, secondColumn, thirdColumn, numberColumn }) => {
-    
+const Table = ({ firstColumn, secondColumn, thirdColumn, numberColumn, data }) => {
+    // console.log(data);
 
     return (
         <table className={classes.table}>
@@ -15,7 +15,7 @@ const Table = ({ firstColumn, secondColumn, thirdColumn, numberColumn }) => {
                 </tr>
             </thead>
             <tbody>
-                {tableData.map((td) => (
+                {data.map((td) => (
                     <tr key={td.id}>
                         <td>{td.firstTd}</td>
                         <td>{td.secondTd}</td>
