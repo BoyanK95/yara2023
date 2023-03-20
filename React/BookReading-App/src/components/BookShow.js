@@ -7,13 +7,19 @@ function BookShow({ book, onDelete, onEdit }) {
     function deleteHandler() {
         onDelete(book.id);
     }
+
     function toggleEdit() {
         setShowEdit(!showEdit);
     }
 
+    function handleSubmit(id, newTitle) {
+      setShowEdit(false)
+      onEdit(id, newTitle)
+    }
+
     return (
         <div className='book-show'>
-            <div>{showEdit ? <BookEdit onEdit={onEdit} book={book} /> : <h3>{book.title}</h3>}</div>
+            <div>{showEdit ? <BookEdit onSubmit={handleSubmit} book={book} /> : <h3>{book.title}</h3>}</div>
             <div className='actions'>
                 <button className='edit' onClick={toggleEdit}>
                     Edit
