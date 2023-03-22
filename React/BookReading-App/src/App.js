@@ -25,8 +25,7 @@ function App() {
     async function createBookHandler(title) {
         const response = await axios.post('http://localhost:3005/books', {
             title
-        });
-
+        })
         console.log(response);
         const updatedBooks = [...books, response.data];
         setBooks(updatedBooks);
