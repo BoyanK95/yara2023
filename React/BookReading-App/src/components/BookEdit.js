@@ -1,25 +1,25 @@
-import { useContext } from "react";
-import { useState } from "react";
-import BooksContext from "../context/books";
+import { useState, useContext } from 'react';
+import BooksContext from '../context/books';
 
-function BookEdit({book, onSubmit}) {
-  const [title, setTitle] = useState(book.title)
-  const { editBookById } = useContext(BooksContext)
+function BookEdit({ book, onSubmit }) {
+    const [title, setTitle] = useState(book.title);
+    const { editBookById } = useContext(BooksContext);
 
-  function titleChangeHandler(e) {
-    setTitle(e.target.value)
-  }
+    const handleChange = (event) => {
+        setTitle(event.target.value);
+    };
 
-  function submitHandler(e) {
-    e.preventDefault()
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-    editBookById(book.id, title)
-  }
+        onSubmit();
+        editBookById(book.id, title);
+    };
 
     return (
-        <form className='book-edit' onSubmit={submitHandler}>
+        <form onSubmit={handleSubmit} className='book-edit'>
             <label>Title</label>
-            <input className='input' value={title} onChange={titleChangeHandler}/>
+            <input className='input' value={title} onChange={handleChange} />
             <button className='button is-primary'>Save</button>
         </form>
     );

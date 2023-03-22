@@ -4,52 +4,62 @@ import axios from 'axios';
 const BooksContext = createContext();
 
 function Provider({ children }) {
-    const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]);
 
-    async function fetchBooks() {
-        const response = await axios.get('http://localhost:3005/books');
+  const fetchBooks = async () => {
+    const response = await axios.get('http://localhost:3005/books');
 
-        setBooks(response.data);
-    }
+    setBooks(response.data);
+  };
 
-    async function deleteBookHandler(id) {
-        await axios.delete(`http://localhost:3005/books/${id}`);
-        const updatedBooks = books.filter((book) => book.id !== id);
-        setBooks(updatedBooks);
-    }
+  const editBookById = async (id, newTitle) => {
+    const response = await axios.put(`http://localhost:3005/books/${id}`, {
+      title: newTitle,
+    });
 
-    async function createBookHandler(title) {
-        const response = await axios.post('http://localhost:3005/books', {
-            title
-        });
-        const updatedBooks = [...books, response.data];
-        setBooks(updatedBooks);
-    }
+    const updatedBooks = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, ...response.data };
+      }
 
-    async function editBookById(id, newTitle) {
-        const response = await axios.put(`http://localhost:3005/books/${id}`, {
-            title: newTitle
-        });
+      return book;
+    });
 
-        const updatedBooks = books.map((book) => {
-            if (book.id === id) {
-                return { ...book, ...response.data };
-            }
-            return book;
-        });
+    setBooks(updatedBooks);
+  };
 
-        setBooks(updatedBooks);
-    }
+  const deleteBookById = async (id) => {
+    await axios.delete(`http://localhost:3005/books/${id}`);
 
-    const valueToShare = {
-        books,
-        deleteBookHandler,
-        createBookHandler,
-        editBookById,
-        fetchBooks
-    };
+    const updatedBooks = books.filter((book) => {
+      return book.id !== id;
+    });
 
-    return <BooksContext.Provider value={valueToShare}>{children}</BooksContext.Provider>;
+    setBooks(updatedBooks);
+  };
+
+  const createBook = async (title) => {
+    const response = await axios.post('http://localhost:3005/books', {
+      title,
+    });
+
+    const updatedBooks = [...books, response.data];
+    setBooks(updatedBooks);
+  };
+
+  const valueToShare = {
+    books,
+    deleteBookById,
+    editBookById,
+    createBook,
+    fetchBooks,
+  };
+
+  return (
+    <BooksContext.Provider value={valueToShare}>
+      {children}
+    </BooksContext.Provider>
+  );
 }
 
 export { Provider };

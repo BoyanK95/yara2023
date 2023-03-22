@@ -3,7 +3,7 @@ import BooksContext from '../context/books';
 
 function BookCreate({ onCreate }) {
     const [title, setTitle] = useState('');
-    const { createBookHandler } = useContext(BooksContext);
+    const { createBook } = useContext(BooksContext);
 
     function handleChange(e) {
         setTitle(e.target.value);
@@ -11,7 +11,7 @@ function BookCreate({ onCreate }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        createBookHandler(title);
+        createBook(title);
         setTitle('');
     }
 
