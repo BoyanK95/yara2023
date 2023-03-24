@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from 'react'
+import { AppContext } from '../context/imagesCtx';
 import './SearchBar.css'
 
-function SearchBar({onSubmit}) {
-  const [term, setTerm] = useState('')
+function SearchBar() {
+  const [term, setTerm] = useState('');
+  const { searchImagesHandler } = useContext(AppContext);
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    onSubmit(term)
+    searchImagesHandler(term)
   }
 
   function inputChangeHandler(e) {

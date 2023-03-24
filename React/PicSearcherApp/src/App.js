@@ -1,23 +1,20 @@
-import { useState } from 'react';
-import './App.css'
-import searchImages from './api';
 import ImageList from './components/ImageList';
 import SearchBar from './components/SearchBar';
+import { useContext } from 'react';
+import { AppContext } from './context/imagesCtx';
+import './App.css';
 
 function App() {
-  const [images, setImages] = useState([])
-
-  const handleSubmit = async (term) => {
-    const result = await searchImages(term)
-
-    console.log(result);
-    setImages(result)
-  }
+    const { state, searchImagesHandler } = useContext(AppContext);
+    const { images, loading, error } = state;
 
     return (
         <div className='container'>
-            <SearchBar onSubmit={handleSubmit}/>
-            <ImageList images={images} />
+            <SearchBar onSubmit={searchImagesHandler} />
+            {loading && <p>Loading images ...</p>}
+            {error && <p>{error}</p>}
+            {images.length === 0 && !error && !loading && <p>No images found for the given search!</p>}
+            {images.length > 0 && !error && !loading && <ImageList images={images} />}
         </div>
     );
 }
