@@ -15,7 +15,6 @@ function CarForm() {
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(addCar({ name, cost }));
-        console.log({name, cost});
     };
 
     const handleNameChange = (e) => {
