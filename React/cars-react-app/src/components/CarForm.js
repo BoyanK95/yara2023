@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { addCar } from '../store/slice/carsSlice';
 import { changeCost, changeName } from '../store/slice/formSlice';
 
 function CarForm() {
@@ -10,6 +11,12 @@ function CarForm() {
             cost: state.form.cost
         };
     });
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        dispatch(addCar({ name, cost }));
+        console.log({name, cost});
+    };
 
     const handleNameChange = (e) => {
         dispatch(changeName(e.target.value));
@@ -23,7 +30,7 @@ function CarForm() {
     return (
         <div className='car-form panel'>
             <h4>Add Car</h4>
-            <form>
+            <form onSubmit={submitHandler}>
                 <div className='field-group'>
                     <div className='field'>
                         <label className='label'>Name</label>
@@ -31,8 +38,16 @@ function CarForm() {
                     </div>
                     <div className='field'>
                         <label className='label'>Cost</label>
-                        <input className='input is-expanded' value={cost || ''} onChange={handleCostChange} type='number' />
+                        <input
+                            className='input is-expanded'
+                            value={cost || ''}
+                            onChange={handleCostChange}
+                            type='number'
+                        />
                     </div>
+                </div>
+                <div className='field'>
+                    <button className='button is-link'>Submit</button>
                 </div>
             </form>
         </div>
