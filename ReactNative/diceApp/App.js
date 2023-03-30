@@ -1,17 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  
-  function handleDiceRoll() {
-    
-  }
+    const [diceArr, setDiceArr] = useState([]);
+    const [totalScore, setTotalScore] = useState(0);
+
+    function handleDiceRoll() {
+        const firstDice = Math.floor(Math.random() * 6) + 1;
+        const secondDice = Math.floor(Math.random() * 6) + 1;
+        const thirdDice = Math.floor(Math.random() * 6) + 1;
+        const sum = firstDice + secondDice + thirdDice;
+
+        setTotalScore(sum);
+    }
 
     return (
         <View style={styles.container}>
-            <Text></Text>
             <View>
-                <Button title='Roll Dice' onPress={handleDiceRoll}/>
+                <Text>Total: {totalScore}</Text>
+            </View>
+            <View>
+                <Button title='Roll Dice' onPress={handleDiceRoll} />
             </View>
         </View>
     );
