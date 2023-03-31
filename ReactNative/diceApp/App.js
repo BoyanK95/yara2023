@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import Total from './Total';
 
 export default function App() {
     const [diceArr, setDiceArr] = useState([]);
@@ -10,34 +11,30 @@ export default function App() {
         const secondDice = Math.floor(Math.random() * 6) + 1;
         const thirdDice = Math.floor(Math.random() * 6) + 1;
         const fourthDice = Math.floor(Math.random() * 6) + 1;
-        const newDiceArr = [firstDice, secondDice, thirdDice, fourthDice]
+        const newDiceArr = [firstDice, secondDice, thirdDice, fourthDice];
+        console.log(newDiceArr);
         const sum = firstDice + secondDice + thirdDice + fourthDice;
 
         setTotalScore(sum);
-        setDiceArr(newDiceArr)
+        setDiceArr(newDiceArr);
     }
 
     return (
         <View style={styles.container}>
-            <View style={styles.totalScoreContainer}>
-                <Text style={styles.totalText}>TOTAL: {totalScore}</Text>
-            </View>
+            <Total total={totalScore} />
             <View style={styles.firstRow}>
-              <View style={styles.diceContainer}>
-                <Text style={styles.totalText}>{diceArr[0]}</Text>
-              </View>
-              <View style={styles.diceContainer}>
-                <Text style={styles.totalText}>{diceArr[1]}</Text>
-              </View>
-              <View style={styles.diceContainer}>
-                <Text style={styles.totalText}>{diceArr[2]}</Text>
-              </View>
+                <View style={styles.diceContainer}>
+                    <Text style={styles.totalText}>{diceArr[1]}</Text>
+                </View>
+                <View style={styles.diceContainer}>
+                    <Text style={styles.totalText}>{diceArr[2]}</Text>
+                </View>
             </View>
-              <View style={styles.diceContainer}>
+            <View style={styles.diceContainer}>
                 <Text style={styles.totalText}>{diceArr[3]}</Text>
-              </View>
-            <View>
-                <Button title='Roll Dice' onPress={handleDiceRoll} />
+            </View>
+            <View style={styles.rollDiceBtnContainer}>
+                <Button style={styles.rollDiceBtn} title='Roll Dice' onPress={handleDiceRoll} />
             </View>
         </View>
     );
@@ -48,28 +45,29 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'black',
         alignItems: 'center',
-        justifyContent: 'center',
-    },
-    totalScoreContainer: {
-        backgroundColor: '#313131',
-        padding: 7,
-        borderRadius: 10,
-        marginBottom: 10
-    },
-    totalText: {
-        color: 'darkgray'
+        justifyContent: 'center'
     },
     diceContainer: {
-      padding: 20,
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: '#525252',
-      margin: 7
+        padding: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#525252',
+        margin: 7
     },
     firstRow: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      width: '80%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        width: '80%'
+    },
+    rollDiceBtnContainer: {
+        padding: 10,
+        marginTop: 250,
+        // backgroundColor: '#460668',
+        borderRadius: 7
     }
+    // rollDiceBtn: {
+    //   color: 'black',
+    //   backgroundColor: '#460668'
+    // }
 });
