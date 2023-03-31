@@ -3,7 +3,7 @@ import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-nativ
 import GoalItem from './GoalItem';
 
 export default function App() {
-    const [enteredGoalText, setEnteredGoalText] = useState('Set your goals here!');
+    const [enteredGoalText, setEnteredGoalText] = useState('');
     const [courseGoals, setCourseGoals] = useState([]);
 
     function goalnputHandler(enteredTest) {
@@ -18,11 +18,16 @@ export default function App() {
     return (
         <View style={styles.appContainer}>
             <View style={styles.inputContainer}>
-                <TextInput style={styles.textInput} value={enteredGoalText} onChangeText={goalnputHandler} />
+                <TextInput
+                    style={styles.textInput}
+                    value={enteredGoalText}
+                    placeholder='Set your goals here!'
+                    onChangeText={goalnputHandler}
+                />
                 <Button title='Add goal' onPress={addGoalHandler} />
             </View>
             <View style={styles}>
-                <FlatList data={courseGoals}/>
+                <FlatList data={courseGoals} renderItem={(itemData) => <GoalItem text={itemData.item} />} />
             </View>
         </View>
     );
@@ -42,5 +47,5 @@ const styles = StyleSheet.create({
         width: '80%',
         marginRight: 8,
         padding: 8
-    },
+    }
 });
