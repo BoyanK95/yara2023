@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import Dice from './Dice';
 import Total from './Total';
 
 export default function App() {
@@ -23,15 +24,7 @@ export default function App() {
         <View style={styles.container}>
             <Total total={totalScore} />
             <View style={styles.firstRow}>
-                <View style={styles.diceContainer}>
-                    <Text style={styles.totalText}>{diceArr[1]}</Text>
-                </View>
-                <View style={styles.diceContainer}>
-                    <Text style={styles.totalText}>{diceArr[2]}</Text>
-                </View>
-            </View>
-            <View style={styles.diceContainer}>
-                <Text style={styles.totalText}>{diceArr[3]}</Text>
+                <Dice dice={diceArr[1]}/>
             </View>
             <View style={styles.rollDiceBtnContainer}>
                 <Button style={styles.rollDiceBtn} title='Roll Dice' onPress={handleDiceRoll} />
@@ -47,13 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    diceContainer: {
-        padding: 20,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#525252',
-        margin: 7
-    },
+   
     firstRow: {
         flexDirection: 'row',
         flexWrap: 'wrap',
