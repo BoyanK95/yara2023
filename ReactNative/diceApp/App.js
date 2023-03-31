@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import Dice from './Dice';
+import { randomNum } from './ranomNum';
 import Total from './Total';
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
         <View style={styles.container}>
             <Total total={totalScore} />
             <View style={styles.firstRow}>
-                <Dice dice={diceArr[1]}/>
+                {diceArr.map(dice => <Dice key={randomNum()} dice={dice}/>)}
             </View>
             <View style={styles.rollDiceBtnContainer}>
                 <Button style={styles.rollDiceBtn} title='Roll Dice' onPress={handleDiceRoll} />
