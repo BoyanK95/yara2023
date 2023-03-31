@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'green'
     },
     goalText: {
-        color: 'white'
+        color: 'white',
+        borderWidth: 2,
     }
 });
