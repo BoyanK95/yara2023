@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import Title from '../components/Title';
 import PrimaryButton from '../components/PrimaryButton';
 
-function GameOverScreen(params) {
+function GameOverScreen({ roundsNumber, userNumber, onStartnewGame }) {
     return (
         <View style={styles.rootContainer}>
             <Title>Game Over!</Title>
@@ -10,10 +10,10 @@ function GameOverScreen(params) {
                 <Image style={styles.image} source={require('../assets/images/endGoal.png')} />
             </View>
             <Text style={styles.summaryText}>
-                Your phone needed <Text style={styles.highlightText}>X</Text> rounds to guess the number
-                <Text style={styles.highlightText}>Y</Text>
+                Your phone needed <Text style={styles.highlightText}>{roundsNumber}</Text> rounds to guess the number
+                <Text style={styles.highlightText}>{userNumber}</Text>
             </Text>
-            <PrimaryButton>Start New Game</PrimaryButton>
+            <PrimaryButton onPress={onStartnewGame}>Start New Game</PrimaryButton>
         </View>
     );
 }
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 24,
         justifyContent: 'center',
-        alignContent: 'center',
+        alignContent: 'center'
     },
     imageContainer: {
         width: 250,

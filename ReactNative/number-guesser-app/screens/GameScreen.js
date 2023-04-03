@@ -4,16 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import NumberContainer from '../components/game/NumberContainer';
 import PrimaryButton from '../components/PrimaryButton';
 import Title from '../components/Title';
-
-function generateRandomBetween(min, max, exclude) {
-    const rndNum = Math.floor(Math.random() * (max - min)) + min;
-
-    if (rndNum === exclude) {
-        return generateRandomBetween(min, max, exclude);
-    } else {
-        return rndNum;
-    }
-}
+import {generateRandomBetween} from '../helpers/generateRandomNum'
 
 let minBoundary = 1;
 let maxBoundary = 100;
@@ -27,6 +18,11 @@ function GameScreen({ userNumber, onGameOver }) {
             onGameOver();
         }
     }, [currentGuess, userNumber, onGameOver]);
+
+    useEffect(() => {
+        minBoundary = 1
+        maxBoundary = 100
+    }, [])
 
     function nextGuessHandler(direction) {
         // direction => 'lower', 'greater'
