@@ -45,7 +45,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
     rootScreen: {
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        alignContent: 'center'
     },
     backgrounImage: {
         opacity: 0.15
