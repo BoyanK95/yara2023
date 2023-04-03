@@ -11,18 +11,18 @@ export default function App() {
     const [gameIsOver, setGameIsOver] = useState(true);
 
     function pickedNumberHandler(pickedNumber) {
-      setUserNumber(pickedNumber);
-      setGameIsOver(false);
+        setUserNumber(pickedNumber);
+        setGameIsOver(false);
     }
 
     function gameOverHandler() {
         setGameIsOver(true);
     }
 
-    let screen = <StartGameScreen onPickedNumber={pickedNumberHandler} onGameOver={gameOverHandler} />;
+    let screen = <StartGameScreen onPickedNumber={pickedNumberHandler} />;
 
     if (userNumber) {
-        screen = <GameScreen userNumber={userNumber} />;
+        screen = <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />;
     }
 
     if (gameIsOver && userNumber) {
